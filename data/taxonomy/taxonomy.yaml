@@ -1,0 +1,136 @@
+# Minicode Learning Section - tag taxonomy (draft v1, week 1)
+#
+# Drafted from the 238 existing recording titles (data/recordings/titles.txt).
+# Keyword rules are a week-1 bootstrap only. In week 3 the LLM enrichment step
+# picks tags from this same list, so tag ids must stay stable once published.
+#
+# Keyword syntax (case-insensitive, matched against the raw and normalized title):
+#   "azure"   whole word / phrase match
+#   "test*"   prefix match (test, testing, testautomation, test-automation ...)
+version: 1
+
+dimensions:
+  topic:
+    description: What the recording is about. Multi-valued (1-3 tags recommended).
+    multi: true
+    fallback: general
+    tags:
+      - id: azure-platform
+        label: Azure platform & cloud infrastructure
+        keywords: [azure, paas, subscription*, management group*, landing zone*, cloud adoption, policies,
+                   platformops, zureops, networking, app service, function*, durable functions, static web apps,
+                   blob storage, batch, key vault, hsm, appgw, azure vs others, serverless, ccoe, tenant transfer]
+      - id: devops-iac
+        label: DevOps, CI/CD & infrastructure as code
+        keywords: [devops, ci, cd, continuous integration, pipeline*, yaml, bicep, everything as code, github,
+                   azure devops, vsts, codespaces, release notes, container*, docker, wsl, azure developer cli,
+                   template*, gh copilot]
+      - id: testing-qa
+        label: Testing & quality assurance
+        keywords: [test*, qa, playwright, k6, jmeter, load testing, browserstack, fluentassertions, test plans]
+      - id: data-analytics
+        label: Data, analytics & Microsoft Fabric
+        keywords: [data, fabric, synapse, databricks, data factory, spark, snowflake, data vault, data explorer,
+                   sql, database*, data platform, zdp, governance, rti, wheels, data natives, data studio,
+                   deepdata, fabcon]
+      - id: ai-genai
+        label: AI, GenAI & machine learning
+        keywords: [ai, genai, llm, openai, copilot, deepseek, notebooklm, windsurf, opencode, openwebui, agent*,
+                   mcp*, semantic kernel, ml, machine learning, transformer, fine-tuning, prompt*, vibecoding,
+                   ai search, foundry, text analysis, ai act, slop, openspec, code mode, faug, zurebot]
+      - id: security-identity
+        label: Security, identity & compliance
+        keywords: [security, secure, devsecops, threat*, zero trust, gdpr, defender, easm, attack surface,
+                   kyber*, cyber, disobey, iam, aad, azure ad, b2c, entra, authentication, client certificates,
+                   purview, http headers, email, junk, dns, pihole, zero knowledge, hsm, advanced security,
+                   self-service signup, ai act]
+      - id: integration-api
+        label: Integration, messaging & APIs
+        keywords: [integration platform, integrations, api, apis, apim, api management, service bus, event grid, outbox, claim-check,
+                   cqrs, event sourcing, signalr, logic apps, function proxies, function proxy]
+      - id: software-engineering
+        label: Software engineering & architecture
+        keywords: ["c#", .net, asp.net, ef core, javascript, es2018, react, hooks, htmx, minimal apis, mediatr,
+                   vertical slices, spa, python, cqrs, procedures as data, databases under the hood, architect*,
+                   ide, feature, blockchain*, database first, design patterns, pattern, slop engineer,
+                   developer*, material ui, hill climbing]
+      - id: monitoring-operations
+        label: Monitoring, observability & operations
+        keywords: [monitoring, slo, application insights, opentelemetry, observability, metrics, performance]
+      - id: iot-location
+        label: IoT, location & digital twins
+        keywords: [iot, location, map, maps, asset tracking, digital twin, site locator]
+      - id: ux-design
+        label: UX, design & accessibility
+        keywords: [ux, design, designing, redesign, mindesign, user research, user story mapping, accessibility,
+                   logo, affinity photo, photo, ui, uis, mobile development, design consultation]
+      - id: ways-of-working
+        label: Agile, product & ways of working
+        keywords: [retrospective*, productivity, po role, user story mapping, going fast, craft-seminar,
+                   workshop, social "selling", selling, training handbook, business drivers, tool selection,
+                   criticize, lessons learned, lessons learnt, uninitiated, how i use, daily work]
+      - id: people-culture
+        label: People, HR & culture
+        keywords: [hr, stress, burnout, recovery, adhd, culture, recruitment, talent matrix, leads, wellbeing,
+                   employee recommendation, linux desktop in gaming, uninitiated]
+      - id: internal-tooling
+        label: Zure internal tooling & templates
+        keywords: [zure template, zure project template, zure.template*, zure tooling, zure.tooling*, zurebot,
+                   zpeedy, zure platformops, zure landing zones, zdp, backend -template, zure data platform,
+                   zure integration platform, integration platform, zure logo]
+      - id: conferences-events
+        label: Conferences & community events
+        keywords: [conference, conf, microsoft build, build 2018, build 2024, build 2025, fabcon, agentcon,
+                   disobey, kyberlahti, hackday, data natives, builtstuff, sql europe, from my bubble]
+      - id: customer-projects
+        label: Customer projects & project intros
+        keywords: [project intro, poc intro, projekti-intro, seure, seuren, valmet, energinet, sponda, digita,
+                   kuusakoski, axla, jakamo, disior, monitzion]
+      - id: general
+        label: General / unclassified (needs manual review)
+        keywords: []
+
+  content_type:
+    description: Format of the session. Single-valued; first matching rule wins.
+    multi: false
+    default: knowledge-share
+    tags:
+      - id: project-intro
+        label: Project / customer introduction
+        keywords: [project intro, poc intro, projekti-intro]
+      - id: training
+        label: Training (incl. guild & mandatory trainings)
+        keywords: [training, minitraining, koulutus, guild, mandatory, workshop, handbook]
+      - id: conference-recap
+        label: Conference / event recap
+        keywords: [conference, conf, build 2018, build 2024, build 2025, fabcon, agentcon, disobey, kyberlahti,
+                   hackday, recap, highlights, news, sql europe]
+      - id: case-study
+        label: Case study, lessons learned & retrospectives
+        keywords: [case, lessons learned, lessons learnt, experiences, retrospective, in production, poc project,
+                   mishap, making of, using ai in the seure project, criticize]
+      - id: demo
+        label: Demo / tool walkthrough
+        keywords: [demo, walkthrough, up and running, setup, emulator]
+      - id: knowledge-share
+        label: Knowledge share / talk
+        keywords: []
+
+  level:
+    description: Expected prior knowledge, Microsoft-style 100-400. Single-valued.
+    multi: false
+    default: 200
+    tags:
+      - id: 100
+        label: "100 - Introductory: no prior knowledge needed"
+        keywords: [level 100, "101", intro, introduction, basics, fundamentals, first steps, get started,
+                   getting started, up and running, for all, what is, what the hell is, topic intro, overview]
+      - id: 200
+        label: "200 - Intermediate: familiar with the basics"
+        keywords: [level 200, "201"]
+      - id: 300
+        label: "300 - Advanced: hands-on experience expected"
+        keywords: [level 300, advanced, in-depth, under the hood, deep dive, managed hsm, fine-tuning]
+      - id: 400
+        label: "400 - Expert: internals and edge cases"
+        keywords: [level 400, internals, transformer architecture]

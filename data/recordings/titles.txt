@@ -1,0 +1,227 @@
+🤖 Zure AI Minicode: Google NotebookLM and DeepSeek (run locally)
+🤖 Zure AI Minicode: Google NotebookLM and DeepSeek (run locally)
+101 to Microsoft Purview
+Minicode: Azure ML Web Services
+ADHD & (work)life
+AgentCon Helsinki presentation prep: Multi-Agent Orchestration Patterns in Semantic Kernel
+Minicode: Azure Deepseek AI in Local
+AI series: Join Jani as he presents how he uses AI tools in his daily work
+AI series: Join Lucie as she presents how she uses AI tools in her daily work
+AI series: Join Natasha as she presents how she uses AI tools in her daily work
+AI series: Join Pasi Huuhka as he presents how he uses AI tools in his daily work
+AI Testing and Testing AI - topic intro with Seure Välkky case example
+DeepData minicode: Transformer architecture
+DevOps & QA Guild Training: Zure.Template.BasicApp Setup for a new project
+DOUBLE Project Intro: Jakamo & Disior - Design Consultation
+EU AI Act - What does it mean for Zure and rest of the world?
+Europe Fabric Conference news & Microsoft Fabric status update
+How I use (docker) containers in development
+Minicode: Bicep private registry
+Minicode: Experiences from Energinet, everything as code - part 1
+Minicode: Azure Subscriptions and Management groups
+Minicode: Location and data map services
+Minicode: Location data and map services lessons learned
+Minicode: SLO monitoring @ Seure
+Minicode: CD for SQL databases
+Minicode: Azure Data Explorer Introduction
+Minicode: FluentAssertions
+Minicode: Function Proxy Deprecation & Static Web Apps
+Minicode: Case Seure - User research and feedback to drive mobile development
+Minicode: The making of Zpeedy - part 1: Just enough analysis
+Minicode: Azure AD self-service signup
+Minicode: The making of Zpeedy - part 2: product development
+Minicode: User Research for All
+Minicode: PRODUCTIVITY BLAST
+Minicode: Email (security) - Level 100
+Minicode: Azure Functions + Azure SignalR Service
+Minicode: Our security flaw and GDPR mishap in Seure (with donuts!)
+Minicode: Threat Modeling
+Project Intro: Axla Customer Portal
+Enterprise AI Search: lessons learnt from Valmet PoC project
+Minicode: GitHub Advanced Security for Azure DevOps
+Minicode: Disobey
+Meeting in "Minicode"
+Microsoft Fabric RTI Training Summary
+Mindesign: AI Design with intention (How to guide AI towards better design)
+Minicode: Azure Developer CLI
+Minicode:  Designing and Implementing a Feature Using OpenSpec
+Minicode - Social "Selling"
+Minicode (Nano Edition): OpenWebUI
+Minicode: Case example - How to get started and geared up to contribute to Zure Tooling v1
+Minicode: Case example - How to get started and geared up to contribute to Zure Tooling v2
+Minicode: AI in office apps, with opencode
+Minicode: AI Prompt Tips
+Minicode: Azure AI Foundry architecture changes
+Minicode: Azure OpenAI FAUG + Hackday talks & demos recap
+Minicode: Building a developer AI platform
+Minicode: Digital Twin demo with Microsoft Fabric RTI
+Minicode: Fabcon Europe 2026 highlights
+Minicode: From IDE to Agents – how AI changed my work as an architect
+Minicode: From IDE to Agents – how AI changed my work as an architect
+Minicode: Going fast?
+Minicode: Hill climbing UIs and more
+Minicode: How retrospectives can help your team
+Minicode: Intro to Zure.Tooling Testautomation Agents
+Minicode: Introduction for Microsoft Fabric platform setup
+Minicode: Jurassic truths about apim and appgw
+MiniCode: Microsoft Fabric & SQL Europe 2026 news
+Minicode: More in-depth look at OpenWebUI
+Minicode on simple tips how to enhance project accessibility (with examples from Kuusakoski and Seure)
+Minicode: Opencode - Up and Running
+Minicode: Running LLM models locally
+Minicode: Testing in Azure DevOps: A Practical Walkthrough with Tips and Tricks
+Minicode: The first steps of vibecoding
+Minicode: The No Slop Engineer
+Minicode: Zero Trust Workshop by MSFT
+Mini-Code ZureBot Redesign work at Tooling
+Minicode(?): Criticize our "data-platform" implementation
+Minicode: 2023 - Year of the Linux desktop in gaming?
+Minicode: Advanced GenAI development
+Minicode: API authentication with client certificates & APIM
+Minicode: Assessing Azure Security
+Minicode: Azure Data Studio Fundamentals
+Minicode: Azure Key Vault Managed HSM
+Minicode: Build 2025 from my bubble
+Minicode: Building and publishing Azure AD B2C custom policies
+Minicode: DevOps related updates to Zure Template
+Minicode: DevSecOps
+Minicode: Disobey 2025
+Minicode: Experiences from Energinet, everything as code, part 2
+Minicode: Fabric Task Flows
+Minicode: Filtering DNS traffic with PiHole for fun and profit
+Minicode: HTMX and Me - Lessons learned
+Minicode: Integration Platform PO role
+Minicode: Introduction to Browserstack
+Minicode: Kyber ja ATK (sorry in finnish something about cyber and IT)
+Minicode: Kyberlahti 2025 experiences
+Minicode: Lazy Spark
+Minicode: Let's talk about GH Copilot
+Minicode: Let's talk about HTMX! 🔥
+Minicode: Migrate existing Service Bus standard namespace to premium tier- Level 200/300
+Minicode: Minimal APIs
+Minicode: OpenAI Fine-tuning
+Minicode: Performance testing with Apache JMeter & Azure Load Testing
+Minicode: Profile photo manipulation with Affinity Photo
+Minicode: Real-time asset tracking with Azure: Leveraging IoT, maps and serverless technologies
+Minicode: Secure AI applications with Microsoft Defender for Cloud
+Minicode: Service Bus emulator
+Minicode: Seure employee recommendation, pt. 2
+Minicode: Snowflake data platform introduction
+Minicode: Synapse API Backend
+Minicode: Using Docker from WSL
+Minicode: What's new in Build 2024 from my bubble
+Minicode: What's new in Zure Project Template?
+Minicode: Why is my email in Junk folder?
+Minicode: Zure Template BasicApp Updates 01/25
+Minicode: Zure Template updates
+[Mandatory for Devs] Zure Integration Platform template training and Q&A
+Minicode: External Attack Surface Management (EASM)
+Miniculture: Creating a winning organisation culture... at a Wizard School?
+MiniHR: Psychological recovery from work
+MiniHR: stress & burnout
+Minirant: Working with the uninitiated
+Minitraining: DevSecOps security safetyguards in continuous integration (disobey workshop test run)
+Minitraining: DevSecOps security safetyguards in continuous integration (disobey workshop test run)
+Minitraining: DevSecOps security safetyguards in continuous integration (disobey workshop test run)
+Minitraining: DevSecOps security safetyguards in continuous integration (disobey workshop test run)
+POC Intro - Digita BTS Site locator
+Project Intro - Energinet CCoE
+Project Intro - Valmet VDL platform
+Project intro: Valmet ML operating framework
+Project Intro: Valmet ServiceNow AI
+Security Guild: HTTP Headers (Mandatory for tech roles, see description)
+Surprise minicode: Code Mode, future of MCPs?
+Talent Matrix for Leads
+Testing and monitoring GenAI models in Azure
+Training - Azure Networking 201 (Mandatory for technical roles)
+Training - Business Drivers for Data Management/Governance
+Using AI in the Seure project
+UX & methodology guild training: User story mapping
+Valmet: Azure DevOps läpikäynti
+What the hell is Zero Knowledge technology - Lauri Peltonen
+Wheels in Motion: Leveraging Python Wheels in Fabric
+Zure AI minicode: Windsurf
+Minicode: ZureOps Networking
+Minicode: Azure ML Web Services
+PowerPoint Presentation
+Minicode: Assets
+Minicode: Exports
+Minicode: AI dev from scratch - Case example: How to get started and geared up to contribute to Zure Tooling
+Minicode: AI dev from scratch - Case example: How to get started and geared up to contribute to Zure Tooling
+(Optional) [Minicode]\_ Outbox pattern in ASP.NET Core application with CAP-20210827_100114
+Application Insights Custom Event & Metrics + end-to-end monitoring case
+Azure Event Grid
+Azure PaaS tool selection 17.12.2018
+CD for SQL databases
+Craft-seminar (evolutionary workshop)
+Enterprise Data Governance
+GitHub vs. Azure DevOps and how they integrate
+Hosting SPA in Blob Storage with Azure Function Proxies
+How I created the infamous Zure logo in practise!
+IAM in Azure 14.1.2019
+Juval Nadav - perjantai 7. syyskuuta 2018 15.09.03
+Microsoft Build 2018
+Minicode -  Seure employee recommendation, pt. 2
+Minicode  Blockchains and Azure - Friday, 14 December 2018 14.03.11
+Minicode  EF Core, transactions ja ha. . . - 25 January 2019 12.00.29
+Minicode  JavaScript - ES2018 features
+Minicode - Lauri Lehman - 2018-12-14 - Text Analysis
+Minicode - Material UI
+Minicode Modular Bicep in Energinet, everything as code 1/2
+Minicode: Azure Batch
+Minicode: Azure ML Web Services
+Minicode: Azure Policies and Zure PlatformOps
+Minicode: Case Seure - User research and feedback to drive mobile development
+Minicode\_ Data Vault 2.0 intro
+Minicode: Databases under the hood
+Minicode: DevOps related updates to Zure Template 03.06.2022
+Minicode\_ Epic Azure API Management Trilogy - Part I
+Minicode\_ Epic Azure API Management Trilogy - Part II
+Minicode\_ Epic Azure API Management Trilogy - Part III
+Minicode\_ Experiences from Energinet, everything as code, part 2/2
+Minicode: Function Proxy Deprecation
+Minicode: Generating release notes in Azure DevOps
+Minicode\_ Introduction to K6 for developers-20221221_11331
+Minicode\_ MediatR behaviours
+Minicode: OpenTelemetry
+Minicode: Playwright test-automation framework
+Minicode\_ Profile photo manipulation with Affinity Photo-20220621_140008-Meeting Recording
+Minicode: Recruitment process at Zure
+Minicode: SLO Monitoring in Seure
+Minicode: Summary of AAD Developer Training
+Minicode: Synapse analytics for developers
+Minicode: User Research For All
+Minicode: ZDP - Zure Data Platform
+Minicode: Zure Template updates 09/2021
+Procedures as Data
+Project Intro - Monitzion-20210326_093313
+The making of Zpeedy - just enough analysis
+The making of Zpeedy - part 2: product development
+VSTS käyttö mobiili DevOps projektissa - Okko Oulasvirta - perjantai 1. kesäkuuta 2018 14.11.07
+ZureOps minicode - Microsoft Cloud Adoption Framework & Zure Landing Zones v0.1
+Azure Guild - Data/API Platform
+Backend -template koulutus 3/2019
+CQRS and Event Sourcing
+Lunch hour - Zure Training handbook
+Minicode - Claim-check pattern
+Minicode - GitHub Codespaces
+Minicode - Okko Oulasvirta - Azure Test Plans and manual testing
+Minicode: (SQL) database first development
+Minicode: 7 deadly sins in AAD app development
+Minicode: Azure basics
+Minicode: Azure Databricks + Azure Data Factory DevOps
+Minicode: Azure Functions Premium Plan
+Minicode: Azure IoT Edge
+Minicode: Azure vs others
+Minicode: Builtstuff conf recap
+Minicode: C# 8
+Minicode: Data Natives 2019 conf recap
+Minicode: Durable functions
+Minicode: Intro to Bicep
+Minicode: MediatR and vertical slices Part II
+Minicode: React Hooks API
+Minicode: Seure Tenant Transfer retrospective
+Minicode: Sponda Data Platform in production (in English)
+Minicode: YAML Pipeline Basics
+Minikode: Azure App Service deployment with containers
+Seuren projekti-intro

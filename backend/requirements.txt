@@ -1,0 +1,3 @@
+# Runtime dependencies for the Azure Functions app.
+azure-functions>=1.21
+pyyaml>=6.0

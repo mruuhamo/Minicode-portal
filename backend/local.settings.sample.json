@@ -1,0 +1,13 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "FUNCTIONS_WORKER_RUNTIME": "python",
+    "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+    "MINICODE_SOURCE": "mock",
+    "MINICODE_SITE_ID": "",
+    "COSMOS_ENDPOINT": "",
+    "SEARCH_ENDPOINT": "",
+    "AI_SERVICES_ENDPOINT": "",
+    "KEY_VAULT_URI": ""
+  }
+}
