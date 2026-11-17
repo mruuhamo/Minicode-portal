@@ -27,6 +27,15 @@ param apiClientId string = ''
 @description('SharePoint site ID of the minicode Teams channel (Graph). Leave empty until Sites.Selected is granted.')
 param minicodeSiteId string = ''
 
+@description('Folder of the channel recordings inside the site\'s default document library ("<Channel>/Recordings").')
+param minicodeFolderPath string = 'General/Recordings'
+
+@description('NCRONTAB schedule of the incremental ingestion timer (Graph delta + polling Speech jobs).')
+param ingestionSchedule string = '0 0 * * * *'
+
+@description('Primary Speech locale; language identification picks between the candidates.')
+param speechLocale string = 'fi-FI'
+
 @description('Monthly budget for the resource group. 0 = no budget.')
 param monthlyBudget int = 0
 
@@ -129,6 +138,14 @@ module functionApp 'modules/functionapp.bicep' = {
       MINICODE_ENVIRONMENT: environmentName
       MINICODE_SOURCE: empty(minicodeSiteId) ? 'mock' : 'graph'
       MINICODE_SITE_ID: minicodeSiteId
+      MINICODE_FOLDER_PATH: minicodeFolderPath
+      MINICODE_STORAGE: 'azure'
+      MINICODE_SPEECH: 'auto'
+      SPEECH_LOCALE: speechLocale
+      SPEECH_CANDIDATE_LOCALES: 'fi-FI,en-US'
+      BACKFILL_SCHEDULE: ingestionSchedule
+      BACKFILL_LOOKBACK_DAYS: '365'
+      INGESTION_ENABLED: 'true'
       KEY_VAULT_URI: keyVault.outputs.uri
       STORAGE_BLOB_ENDPOINT: storage.outputs.blobEndpoint
       COSMOS_ENDPOINT: cosmos.outputs.endpoint

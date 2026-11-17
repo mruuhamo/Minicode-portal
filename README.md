@@ -9,11 +9,11 @@ See [docs/architecture.md](docs/architecture.md) for the diagram and component m
 | Week | Theme | Status |
 |---|---|---|
 | 1 | Discovery & setup: inventory, taxonomy, naming convention, environments, CI/CD | ✅ code done - human tasks in [docs/week1-checklist.md](docs/week1-checklist.md) |
-| 2 | Graph ingestion (backfill + change notifications), blob storage | - |
-| 3 | Transcripts, chunking, LLM enrichment, embeddings, search index | - |
+| 2 | Ingestion & transcripts: Graph backfill + delta, Speech batch transcription, VTT parsing, chunking | ✅ code done against mocks - see [docs/week2-ingestion.md](docs/week2-ingestion.md) |
+| 3 | LLM enrichment, embeddings, search index | - |
 | 4 | Search API + React Learning section | - |
 
-No real Azure / SharePoint access yet: the backend runs against **mock data** through the `RecordingSource` adapter; the Graph implementation plugs in later.
+No real Azure / SharePoint access yet. The real Graph and Speech clients are implemented, but they run against an in-process **mock cloud** built from sample data (`MINICODE_SOURCE=mock`). Switching to the real services is configuration only.
 
 ## Repository layout
 
@@ -22,9 +22,12 @@ backend/            Python Azure Functions app + minicode package
   minicode/
     naming.py         title normalizer (naming convention)
     taxonomy.py       taxonomy loader + keyword tagger
-    inventory/        inventory pipeline, RecordingSource adapters (mock, Graph stub)
+    inventory/        inventory pipeline, RecordingSource adapters (mock, Graph)
+    ingestion/        Graph + Speech clients, VTT parser, chunker, pipeline, state, mock cloud, CLI
+    samples/          sample recordings/transcripts for the mock cloud
+    storage.py        blob storage abstraction (local filesystem, Azure Blob)
   tests/            pytest
-  function_app.py   Functions entry point (/api/health)
+  function_app.py   Functions entry point (/api/health, /api/admin/ingest, hourly ingest timer)
 data/
   recordings/titles.txt   existing minicode titles (227, raw export)
   taxonomy/taxonomy.yaml  tag taxonomy (source of truth)
@@ -43,6 +46,8 @@ cd backend
 ..\.venv\Scripts\python -m pytest -q          # tests
 ..\.venv\Scripts\ruff check .                 # lint
 ..\.venv\Scripts\python -m minicode.inventory # regenerate docs/inventory-report.md + docs/inventory.csv
+..\.venv\Scripts\python -m minicode.ingestion backfill --wait  # ingest mock recordings -> ..\out\blob
+..\.venv\Scripts\python -m minicode.ingestion status
 ```
 
 Infra (needs Azure CLI with Bicep):
@@ -59,3 +64,7 @@ az deployment sub what-if -l swedencentral -f infra\main.bicep -p infra\env\dev.
 - [Naming convention](docs/naming-convention.md)
 - [Environments, CI/CD & identity](docs/environments.md)
 - [Human-task checklist](docs/week1-checklist.md)
+
+## Week 2 deliverables
+
+- [Ingestion & transcripts](docs/week2-ingestion.md): design, blob layout, state machine, local run, switching to real Graph/Speech, open questions

@@ -72,3 +72,5 @@ az deployment sub create  -l swedencentral -f infra/main.bicep -p infra/env/dev.
 | `minicode-ingest-<env>` | Graph access for ingestion | **Application** permission `Sites.Selected` (admin consent) + per-site `read` grant; credential = certificate in Key Vault, or federated credential to the Function App's managed identity |
 
 See [week1-checklist.md](week1-checklist.md) for the Sites.Selected request text.
+
+Ingestion settings (`MINICODE_*`, `SPEECH_*`, `BACKFILL_*`, `INGESTION_ENABLED`) are listed in [week2-ingestion.md](week2-ingestion.md#settings). The Bicep parameters for them are `minicodeSiteId`, `minicodeFolderPath`, `ingestionSchedule` and `speechLocale`.
