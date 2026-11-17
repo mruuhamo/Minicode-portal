@@ -1,0 +1,25 @@
+WEBVTT
+
+00:00:01.000 --> 00:00:08.400
+<v Pekka Mäkelä>Moikka kaikki! Tänään puhun siitä, miten otimme SLO-seurannan käyttöön Seuren projektissa.</v>
+
+00:00:08.900 --> 00:00:19.200
+<v Pekka Mäkelä>SLO eli service level objective on tavoite, esimerkiksi että 99,5 % API-kutsuista onnistuu ja vastaa alle sekunnissa.</v>
+
+00:00:19.800 --> 00:00:31.500
+<v Pekka Mäkelä>Mittarit tulevat Application Insightsista. Kirjoitimme KQL-kyselyt, jotka laskevat onnistuneiden pyyntöjen osuuden viiden minuutin ikkunoissa.</v>
+
+00:00:32.100 --> 00:00:43.800
+<v Pekka Mäkelä>Tärkein oppi oli error budget: kun budjetti on käytetty, keskitytään vakauteen eikä uusiin ominaisuuksiin.</v>
+
+00:00:44.400 --> 00:00:51.000
+<v Timo Salonen>Miten hälytykset on toteutettu? Tuleeko niitä paljon turhaan?</v>
+
+00:00:51.600 --> 00:01:04.200
+<v Pekka Mäkelä>Käytämme burn rate -hälytyksiä kahdella ikkunalla, tunti ja kuusi tuntia. Se vähensi turhia hälytyksiä selvästi.</v>
+
+00:01:04.800 --> 00:01:16.300
+<v Pekka Mäkelä>Dashboard on Azure Workbookissa ja asiakas näkee sen myös. Se on parantanut keskustelua palvelutasosta.</v>
+
+00:01:16.900 --> 00:01:24.500
+<v Pekka Mäkelä>Kiitos! Kyselyt ja workbook-pohja löytyvät kanavalta.</v>

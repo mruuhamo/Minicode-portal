@@ -1,0 +1,9 @@
+# locale: fi-FI
+1|No niin, aloitetaan. Puhun tänään tietokantojen jatkuvasta toimituksesta, eli CD:stä SQL-tietokannoille.
+1|Ongelma oli, että skeemamuutokset tehtiin käsin tuotantoon ja ympäristöt erosivat toisistaan.
+1|Otimme käyttöön SQL-tietokantaprojektit ja DACPAC-paketit, jotka buildataan samassa putkessa kuin sovellus.
+1|Julkaisu tehdään GitHub Actionsilla, ja ennen tuotantoa ajetaan deploy report, josta näkee mitä muuttuu.
+2|Entä datamigraatiot, jotka eivät ole pelkkiä skeemamuutoksia?
+1|Ne tehdään pre- ja post-deployment-skripteillä, ja niiden pitää olla idempotentteja.
+1|Tärkein oppi: estä datan häviäminen oletuksena ja vaadi erillinen hyväksyntä, jos muutos poistaa sarakkeita.
+1|Kiitos kuuntelemisesta, esimerkkiputki löytyy repositoriosta.

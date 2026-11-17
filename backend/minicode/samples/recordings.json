@@ -1,0 +1,90 @@
+{
+  "_comment": "Mock Recordings folder for the Graph/Speech fakes. Dates are relative (days_ago) to the run time so the 12-month window always applies. 'stem' is the Teams-style file stem: Teams replaces ':' and '?' with '_' and appends -<yyyyMMdd_HHmmss>-Meeting Recording.",
+  "site_id": "contoso.sharepoint.com,11111111-1111-1111-1111-111111111111,22222222-2222-2222-2222-222222222222",
+  "drive_id": "b!mock-minicode-drive",
+  "folder": "General/Recordings",
+  "items": [
+    {
+      "stem": "Minicode_ Bicep private registry",
+      "days_ago": 18,
+      "organizer": "Aino Virtanen",
+      "email": "aino.virtanen@contoso.com",
+      "duration_min": 3,
+      "transcript": "bicep-private-registry.vtt"
+    },
+    {
+      "stem": "DeepData minicode_ Transformer architecture",
+      "days_ago": 47,
+      "organizer": "Mikael Lindqvist",
+      "email": "mikael.lindqvist@contoso.com",
+      "duration_min": 3,
+      "transcript": "transformer-architecture.vtt"
+    },
+    {
+      "stem": "PowerPoint Presentation",
+      "extension": ".pptx",
+      "mime": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+      "days_ago": 47,
+      "organizer": "Mikael Lindqvist",
+      "email": "mikael.lindqvist@contoso.com"
+    },
+    {
+      "stem": "EU AI Act - What does it mean for Zure and rest of the world_",
+      "days_ago": 96,
+      "organizer": "Laura Nieminen",
+      "email": "laura.nieminen@contoso.com",
+      "duration_min": 2,
+      "speech": "eu-ai-act.txt"
+    },
+    {
+      "stem": "Minicode_ Threat Modeling",
+      "days_ago": 152,
+      "organizer": "Jussi Korhonen",
+      "email": "jussi.korhonen@contoso.com",
+      "duration_min": 3,
+      "transcript": "threat-modeling.vtt"
+    },
+    {
+      "stem": "Enterprise AI Search_ lessons learnt from Valmet PoC project",
+      "days_ago": 205,
+      "organizer": "Sara Heikkinen",
+      "email": "sara.heikkinen@contoso.com",
+      "duration_min": 2,
+      "speech": "enterprise-ai-search.txt"
+    },
+    {
+      "stem": "Minicode_ SLO monitoring @ Seure",
+      "days_ago": 290,
+      "organizer": "Pekka Mäkelä",
+      "email": "pekka.makela@contoso.com",
+      "duration_min": 2,
+      "transcript": "slo-monitoring.vtt"
+    },
+    {
+      "stem": "Minicode_ CD for SQL databases",
+      "days_ago": 334,
+      "organizer": "Timo Salonen",
+      "email": "timo.salonen@contoso.com",
+      "duration_min": 2,
+      "speech": "cd-for-sql.txt"
+    },
+    {
+      "stem": "Minicode_ Azure ML Web Services",
+      "days_ago": 610,
+      "organizer": "Mikael Lindqvist",
+      "email": "mikael.lindqvist@contoso.com",
+      "duration_min": 45,
+      "transcript": "bicep-private-registry.vtt",
+      "_comment": "older than 12 months: must be filtered out by the backfill"
+    },
+    {
+      "stem": "Minicode_ Azure Data Explorer Introduction",
+      "days_ago": 420,
+      "organizer": "Sara Heikkinen",
+      "email": "sara.heikkinen@contoso.com",
+      "duration_min": 50,
+      "speech": "enterprise-ai-search.txt",
+      "_comment": "older than 12 months"
+    }
+  ]
+}

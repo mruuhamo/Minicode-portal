@@ -36,6 +36,7 @@ ROMAN = {"I": 1, "II": 2, "III": 3, "IV": 4, "V": 5, "VI": 6}
 
 EMOJI_RE = re.compile("[\U0001f300-\U0001faff\u2600-\u27bf\ufe0f]")
 ESCAPED_UNDERSCORE_RE = re.compile(r"\\+_")
+TEAMS_FILENAME_COLON_RE = re.compile(r"(?<=\w)_(?=\s)")  # Teams file names: "Minicode: X" -> "Minicode_ X"
 OPTIONAL_RE = re.compile(r"^\s*\(optional\)\s*", re.I)
 MANDATORY_BRACKET_RE = re.compile(r"^\s*\[mandatory[^\]]*\]\s*", re.I)
 RECORDING_SUFFIX_RE = re.compile(r"-(\d{4})(\d{2})(\d{2})_\d{4,6}(?:-Meeting Recording)?\s*$")
@@ -120,6 +121,7 @@ def normalize_title(raw: str) -> NormalizedTitle:
     notes: list[str] = []
     s = EMOJI_RE.sub("", raw)
     s = ESCAPED_UNDERSCORE_RE.sub(":", s)
+    s = TEAMS_FILENAME_COLON_RE.sub(":", s)
     s = _collapse(s)
 
     optional = bool(OPTIONAL_RE.match(s))
@@ -130,7 +132,7 @@ def normalize_title(raw: str) -> NormalizedTitle:
     date_hint: str | None = None
     if m := RECORDING_SUFFIX_RE.search(s):
         date_hint = _date(int(m[1]), int(m[2]), int(m[3]))
-        s = s[: m.start()]
+        s = s[: m.start()].rstrip("_")  # trailing "_" = a "?" or "/" that Teams replaced in the file name
     elif (m := LONG_TIMESTAMP_RE.search(s)) and m["month"].lower() in MONTHS:
         date_hint = _date(int(m["year"]), MONTHS[m["month"].lower()], int(m["day"]))
         s = s[: m.start()]

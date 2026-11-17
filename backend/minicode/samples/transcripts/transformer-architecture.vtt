@@ -1,0 +1,37 @@
+WEBVTT
+
+00:00:02.000 --> 00:00:10.500
+<v Mikael Lindqvist>Welcome to the DeepData minicode. Today: the transformer architecture, the T in GPT.</v>
+
+00:00:10.900 --> 00:00:21.300
+<v Mikael Lindqvist>Before transformers we had recurrent networks that read text one token at a time. That is slow to train and they forget long contexts.</v>
+
+00:00:21.800 --> 00:00:33.400
+<v Mikael Lindqvist>The key idea of the 2017 paper "Attention is all you need" is self-attention: every token looks at every other token in parallel.</v>
+
+00:00:34.000 --> 00:00:46.200
+<v Mikael Lindqvist>Each token is projected to a query, a key and a value. The attention weight is the softmax of query times key, scaled by the square root of the dimension.</v>
+
+00:00:46.900 --> 00:00:53.100
+<v Laura Nieminen>So the cost grows with the square of the context length?</v>
+
+00:00:53.500 --> 00:01:05.800
+<v Mikael Lindqvist>Exactly, that's why long context windows are expensive and why there are tricks like sliding windows and flash attention.</v>
+
+00:01:06.400 --> 00:01:18.900
+<v Mikael Lindqvist>Multi-head attention runs several of these in parallel so different heads can learn different relationships, like syntax or coreference.</v>
+
+00:01:19.500 --> 00:01:31.000
+<v Mikael Lindqvist>Because attention has no notion of order, we add positional encodings. Modern models use rotary embeddings.</v>
+
+00:01:31.600 --> 00:01:44.100
+<v Mikael Lindqvist>GPT style models are decoder only: they use a causal mask so a token only sees the tokens before it, and they predict the next token.</v>
+
+00:01:44.700 --> 00:01:52.300
+<v Sara Heikkinen>How does this relate to the embeddings we use in Azure AI Search?</v>
+
+00:01:52.900 --> 00:02:07.400
+<v Mikael Lindqvist>Embedding models are usually encoder style transformers. They pool the token vectors into one vector per text, which is what we index for vector search.</v>
+
+00:02:08.000 --> 00:02:17.600
+<v Mikael Lindqvist>That's the whirlwind tour. Slides and the notebook are in the channel. Thanks!</v>

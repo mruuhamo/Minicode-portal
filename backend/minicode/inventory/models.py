@@ -25,3 +25,11 @@ class Recording:
     web_url: str | None = None
     drive_item_id: str | None = None
     source: str = "unknown"
+    # Ingestion metadata (week 2). All optional so the title-only mock source still works.
+    organizer: str | None = None  # Teams recordings: driveItem.createdBy = whoever started the recording
+    organizer_email: str | None = None
+    etag: str | None = None  # change detection for idempotent re-runs
+    size_bytes: int | None = None
+    mime_type: str | None = None
+    folder_path: str | None = None
+    file_name: str | None = None

@@ -1,0 +1,60 @@
+WEBVTT
+
+NOTE Sample Teams transcript (fictional content for local development)
+
+5e4b1c2a-0001-4a7e-9a52-1c3f6a2b8d01/12-0
+00:00:03.120 --> 00:00:09.480
+<v Aino Virtanen>Hi everyone, welcome to today's minicode. I'm going to talk about Bicep private registries.</v>
+
+5e4b1c2a-0001-4a7e-9a52-1c3f6a2b8d01/13-0
+00:00:09.480 --> 00:00:17.900
+<v Aino Virtanen>The problem we had: every project copied the same storage, Key Vault and Function App modules,
+and they slowly drifted apart.</v>
+
+5e4b1c2a-0001-4a7e-9a52-1c3f6a2b8d01/14-0
+00:00:18.200 --> 00:00:26.750
+<v Aino Virtanen>A private registry is just an Azure Container Registry. You publish a module with az bicep publish and give it a version tag.</v>
+
+5e4b1c2a-0001-4a7e-9a52-1c3f6a2b8d01/15-0
+00:00:27.010 --> 00:00:35.300
+<v Aino Virtanen>Then in your main.bicep you reference it as br:yourregistry.azurecr.io/bicep/modules/storage:1.2.0 and that's it.</v>
+
+5e4b1c2a-0001-4a7e-9a52-1c3f6a2b8d01/16-0
+00:00:36.100 --> 00:00:41.900
+<v Mikael Lindqvist>How do you handle authentication in the pipelines? Do you need a separate service principal?</v>
+
+5e4b1c2a-0001-4a7e-9a52-1c3f6a2b8d01/17-0
+00:00:42.300 --> 00:00:52.600
+<v Aino Virtanen>No, the same federated identity that deploys gets the AcrPull role on the registry. Restore happens during bicep build.</v>
+
+5e4b1c2a-0001-4a7e-9a52-1c3f6a2b8d01/18-0
+00:00:53.000 --> 00:01:04.400
+<v Aino Virtanen>Versioning matters. We use semantic versions and never overwrite a tag, so a project pinned to 1.2.0 never changes underneath you.</v>
+
+5e4b1c2a-0001-4a7e-9a52-1c3f6a2b8d01/19-0
+00:01:05.000 --> 00:01:15.800
+<v Aino Virtanen>We also publish module documentation with the metadata description decorator, so the VS Code extension shows it on hover.</v>
+
+5e4b1c2a-0001-4a7e-9a52-1c3f6a2b8d01/20-0
+00:01:16.300 --> 00:01:22.100
+<v Jussi Korhonen>What about the public Azure Verified Modules? Should we use those instead?</v>
+
+5e4b1c2a-0001-4a7e-9a52-1c3f6a2b8d01/21-0
+00:01:22.600 --> 00:01:35.900
+<v Aino Virtanen>Good question. AVM is great as a starting point &amp; we wrap some of them, but our registry adds our naming convention and security defaults on top.</v>
+
+5e4b1c2a-0001-4a7e-9a52-1c3f6a2b8d01/22-0
+00:01:36.500 --> 00:01:50.200
+<v Aino Virtanen>Let me show a quick demo. Here I publish the storage module, bump the version, and the what-if in the pipeline shows the change.</v>
+
+5e4b1c2a-0001-4a7e-9a52-1c3f6a2b8d01/23-0
+00:01:51.000 --> 00:02:04.700
+<v Aino Virtanen>Lessons learned: keep modules small, test them with bicep lint and a what-if against a sandbox subscription before publishing.</v>
+
+5e4b1c2a-0001-4a7e-9a52-1c3f6a2b8d01/24-0
+00:02:05.200 --> 00:02:12.000
+<v Mikael Lindqvist>Thanks Aino, this was really useful. Where can we find the registry?</v>
+
+5e4b1c2a-0001-4a7e-9a52-1c3f6a2b8d01/25-0
+00:02:12.400 --> 00:02:20.900
+<v Aino Virtanen>The link is in the channel and the module catalog is in the wiki. Thanks everyone!</v>

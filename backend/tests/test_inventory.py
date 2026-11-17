@@ -42,9 +42,9 @@ def test_mock_source_is_deterministic_and_skips_blank_lines(titles_file: Path) -
     assert all(r.source == "mock" and r.has_transcript is not None for r in first)
 
 
-def test_graph_source_is_a_stub() -> None:
-    with pytest.raises(NotImplementedError):
-        list(GraphRecordingSource(site_id="contoso.sharepoint.com,1,2").list_recordings())
+def test_graph_source_requires_site_id() -> None:
+    with pytest.raises(ValueError, match="MINICODE_SITE_ID"):
+        list(GraphRecordingSource(site_id="").list_recordings())
 
 
 def test_build_inventory_counts_and_duplicates(titles_file: Path) -> None:

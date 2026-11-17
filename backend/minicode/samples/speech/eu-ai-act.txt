@@ -1,0 +1,12 @@
+# locale: en-US
+# Lines are "<speaker number>|<text>"; the fake Speech service turns them into recognizedPhrases.
+1|Okay, let's get started. This session is about the EU AI Act and what it means for us and our customers.
+1|The AI Act entered into force in August 2024 and the obligations apply in phases until 2027.
+1|It is risk based. Prohibited practices like social scoring are banned outright, high risk systems need conformity assessment, and limited risk systems have transparency duties.
+1|Most of what we build, chat assistants and search over company documents, falls into limited or minimal risk.
+2|So what do we actually need to do in a typical RAG project?
+1|Tell users they are talking to an AI, keep documentation of the data and models used, and make sure humans can review important decisions.
+1|General purpose AI model providers like OpenAI or Anthropic have their own obligations, but as deployers we must use them according to their instructions.
+2|What about recordings like these minicodes, if we transcribe them with AI?
+1|That is a GDPR question more than an AI Act question. Inform the presenters, define the purpose, and keep the data inside our tenant.
+1|I'll share the checklist in the channel. Thanks for joining!

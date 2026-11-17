@@ -1,3 +1,8 @@
 # Runtime dependencies for the Azure Functions app.
 azure-functions>=1.21
 pyyaml>=6.0
+httpx>=0.27
+azure-identity>=1.17
+azure-storage-blob>=12.20
+# Static ffmpeg binary for extracting audio for Azure AI Speech (Flex Consumption has no ffmpeg).
+imageio-ffmpeg>=0.5

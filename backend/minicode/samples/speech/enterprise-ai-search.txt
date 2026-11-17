@@ -1,0 +1,12 @@
+# locale: en-US
+1|Hi all, I'll go through what we learned building an enterprise AI search proof of concept for Valmet.
+1|The goal was to let engineers ask questions over thousands of technical manuals in several languages.
+1|We used Azure AI Search with hybrid retrieval, so keyword search and vector search combined with semantic ranking on top.
+1|Chunking turned out to be the most important decision. Chunks that follow the document structure worked much better than fixed size chunks.
+2|Did you try different embedding models?
+1|Yes, text embedding three large gave the best recall, especially for Finnish and German content.
+1|Another lesson: keep the source page and a deep link in every chunk, users only trust answers they can verify.
+1|Evaluation was hard. We built a small golden question set with the customer's experts and ran it on every change.
+2|How did the costs look like?
+1|Search service and embeddings were cheap, the LLM calls dominated. Caching frequent questions helped a lot.
+1|That's it from me, questions in the chat please.

@@ -17,7 +17,11 @@ def make_source(name: str, titles: Path) -> RecordingSource:
     if name == "mock":
         return MockRecordingSource(titles)
     if name == "graph":
-        return GraphRecordingSource(site_id=os.environ.get("MINICODE_SITE_ID", ""))
+        return GraphRecordingSource(
+            site_id=os.environ.get("MINICODE_SITE_ID", ""),
+            drive_id=os.environ.get("MINICODE_DRIVE_ID") or None,
+            folder_path=os.environ.get("MINICODE_FOLDER_PATH", "General/Recordings"),
+        )
     raise ValueError(f"unknown source {name!r}")
 
 

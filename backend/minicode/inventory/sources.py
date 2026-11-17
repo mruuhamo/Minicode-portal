@@ -2,7 +2,7 @@
 
 `RecordingSource` is the adapter interface used by inventory, backfill and (later) the
 change-notification/delta ingestion. Week 1 ships a mock source backed by the title
-list; `GraphRecordingSource` is a stub that documents the real implementation.
+list; `GraphRecordingSource` (Microsoft Graph, week 2) is re-exported from minicode.ingestion.graph.
 """
 
 from __future__ import annotations
@@ -69,33 +69,8 @@ class MockRecordingSource:
             )
 
 
-class GraphRecordingSource:
-    """Microsoft Graph implementation (NOT IMPLEMENTED - waiting for Sites.Selected access).
+# The real Microsoft Graph implementation (week 2) lives with the ingestion code; re-exported so
+# inventory and ingestion share one RecordingSource.
+from minicode.ingestion.graph import GraphRecordingSource  # noqa: E402
 
-    Planned implementation:
-      * Auth: app-only token for the backend app registration (certificate or managed-identity
-        federated credential), Graph application permission `Sites.Selected` with a `read` grant
-        on the minicode channel SharePoint site only.
-      * Discovery: GET /sites/{site-id}/drives -> the channel's document library, then
-        GET /drives/{drive-id}/root:/{channel-folder}/Recordings:/children (or /delta for
-        incremental sync) filtered to video files (file.mimeType == "video/mp4").
-      * Metadata: createdDateTime, video.duration, webUrl, size, lastModifiedBy.
-      * Status: items in the recycle bin -> DELETED; Teams recording expiration date
-        (`media` facet / list item field) in the past -> EXPIRED.
-      * Transcripts: Stream stores Teams transcripts inside the video's media metadata, not as
-        separate files. Whether Sites.Selected is enough to read them must be verified
-        (see docs/week1-checklist.md). Fallbacks: onlineMeeting transcripts API
-        (OnlineMeetingTranscript.Read.All) or Azure AI Speech transcription.
-    """
-
-    name = "graph"
-
-    def __init__(self, site_id: str, drive_id: str | None = None, folder_path: str = "Recordings") -> None:
-        self.site_id = site_id
-        self.drive_id = drive_id
-        self.folder_path = folder_path
-
-    def list_recordings(self) -> Iterator[Recording]:
-        raise NotImplementedError(
-            "GraphRecordingSource needs Graph Sites.Selected access; use MockRecordingSource until then."
-        )
+__all__ = ["GraphRecordingSource", "MockRecordingSource", "RecordingSource"]
