@@ -33,7 +33,7 @@ def main(argv: list[str] | None = None) -> int:
     report = build_inventory(source.list_recordings(), source=source.name)
 
     args.out.parent.mkdir(parents=True, exist_ok=True)
-    args.out.write_text(to_markdown(report), encoding="utf-8")
+    args.out.write_text(to_markdown(report), encoding="utf-8", newline="\n")
     to_csv(report, args.csv)
     print(
         f"{report.total} recordings ({report.unique_titles} unique) from '{source.name}' -> {args.out}, {args.csv}",

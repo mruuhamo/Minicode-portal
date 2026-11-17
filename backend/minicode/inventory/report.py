@@ -142,7 +142,7 @@ def to_markdown(report: InventoryReport, taxonomy: Taxonomy | None = None) -> st
 def to_csv(report: InventoryReport, path: Path) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open("w", encoding="utf-8", newline="") as f:
-        writer = csv.writer(f)
+        writer = csv.writer(f, lineterminator="\n")
         writer.writerow(
             ["id", "original_title", "normalized_title", "series", "part", "presenter", "date_hint",
              "topics", "content_type", "level", "level_source", "status", "has_transcript", "issues", "source"]
