@@ -1,6 +1,6 @@
 # Minicode Learning Section - tag taxonomy (draft v1, week 1)
 #
-# Drafted from the 238 existing recording titles (data/recordings/titles.txt).
+# Drafted from the 227 existing recording titles (data/recordings/titles.txt).
 # Keyword rules are a week-1 bootstrap only. In week 3 the LLM enrichment step
 # picks tags from this same list, so tag ids must stay stable once published.
 #

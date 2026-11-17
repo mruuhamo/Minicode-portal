@@ -1,0 +1,40 @@
+flowchart LR
+    subgraph M365["Microsoft 365"]
+        SP["Teams channel<br/>SharePoint / Stream<br/>recordings + transcripts"]
+    end
+
+    subgraph Ingest["Ingestion (Azure Functions, Python)"]
+        BF["Backfill<br/>(1 year)"]
+        CN["Graph change<br/>notifications + delta"]
+        TP["Transcript parse<br/>+ chunk w/ timestamps"]
+        EN["LLM enrichment<br/>title, summary, presenter,<br/>tags, level"]
+    end
+
+    subgraph Data["Storage"]
+        BLOB[("Blob Storage<br/>transcripts, artifacts")]
+        DB[("Cosmos DB<br/>curated metadata")]
+        IDX[("Azure AI Search<br/>hybrid + facets")]
+    end
+
+    subgraph AI["Azure AI Services / Foundry"]
+        SPEECH["AI Speech<br/>(no transcript)"]
+        LLM["Claude (Foundry)<br/>Azure OpenAI"]
+        EMB["OpenAI<br/>embeddings"]
+    end
+
+    API["Search API<br/>(Functions, Entra token check,<br/>admin endpoints)"]
+    UI["Portal Learning section<br/>React + MSAL"]
+    KV["Key Vault"]
+    MON["App Insights<br/>+ budget alerts"]
+
+    SP -- "Graph Sites.Selected (read)" --> BF & CN
+    BF & CN --> BLOB
+    BLOB --> TP
+    TP -- "audio only" --> SPEECH --> TP
+    TP --> EN --> LLM
+    EN --> DB
+    TP --> EMB --> IDX
+    DB --> IDX
+    UI -- "Entra ID token" --> API --> IDX & DB
+    Ingest -.-> KV & MON
+    API -.-> MON
