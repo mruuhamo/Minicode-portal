@@ -16,6 +16,7 @@ from __future__ import annotations
 import hashlib
 import json
 import re
+import uuid
 from dataclasses import dataclass, field
 from datetime import UTC, datetime, timedelta
 from pathlib import Path, PurePosixPath
@@ -120,6 +121,7 @@ class MockCloud:
             "_version": self.version,
         })
         item.setdefault("webUrl", f"https://contoso.sharepoint.com/sites/minicode/Shared%20Documents/{folder}/{item['name']}")
+        item.setdefault("sharepointIds", {"listItemUniqueId": str(uuid.uuid5(uuid.NAMESPACE_URL, item_id))})
         self.items[item_id] = item
         return item
 

@@ -41,6 +41,7 @@ def source_fields(item: EnrichmentInput) -> dict[str, Any]:
     return {
         "rawTitle": item.raw_title,
         "webUrl": item.web_url,
+        "listItemUniqueId": item.list_item_unique_id,
         "recordedAt": item.recorded_at,
         "organizer": item.organizer,
         "durationSeconds": item.duration_seconds,

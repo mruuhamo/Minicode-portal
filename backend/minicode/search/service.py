@@ -36,6 +36,25 @@ def timestamp_url(web_url: str | None, seconds: float) -> str | None:
     return urlunsplit(parts._replace(query=query))
 
 
+def stream_embed_url(web_url: str | None, unique_id: str | None, start: float | None = None) -> str | None:
+    """Stream (on SharePoint) iframe player URL, the format of Stream's "Embed code" dialog.
+
+    `embed` is JSON: `ust` = use start time, `st` = start seconds. The player can only seek by reloading with a new
+    `st`; the frontend does that. UNVERIFIED against the tenant - see docs/week4-frontend.md.
+    """
+    if not web_url or not unique_id:
+        return None
+    parts = urlsplit(web_url)
+    segments = [s for s in parts.path.split("/") if s]
+    site = "/" + "/".join(segments[:2]) if len(segments) >= 2 and segments[0] in ("sites", "teams") else ""
+    embed: dict[str, Any] = {"ust": True, "hv": "CopyEmbedCode"}
+    if start:
+        embed["st"] = int(start)
+    query = urlencode({"UniqueId": unique_id, "embed": json.dumps(embed, separators=(",", ":")),
+                       "referrer": "StreamWebApp", "referrerScenario": "EmbedDialog.Create"})
+    return urlunsplit((parts.scheme, parts.netloc, f"{site}/_layouts/15/embed.aspx", query, ""))
+
+
 def api_view(doc: dict[str, Any], admin: bool = False) -> dict[str, Any]:
     edm = parent_fields(doc)["date"]
     view = {
@@ -51,6 +70,7 @@ def api_view(doc: dict[str, Any], admin: bool = False) -> dict[str, Any]:
         "language": doc.get("language"),
         "keywords": doc.get("keywords") or [],
         "webUrl": doc.get("webUrl"),
+        "embedUrl": stream_embed_url(doc.get("webUrl"), doc.get("listItemUniqueId")),
         "durationSeconds": doc.get("durationSeconds"),
         "transcriptSource": doc.get("transcriptSource"),
         "chunkCount": doc.get("chunkCount"),

@@ -41,6 +41,7 @@ def test_lists_videos_in_window_with_metadata(source: GraphRecordingSource, clou
     assert bicep.recorded_at.tzinfo is not None and bicep.etag and bicep.size_bytes
     assert bicep.folder_path == "General/Recordings" and bicep.drive_item_id == bicep.id
     assert sum(1 for r in recs if r.has_transcript) == 4
+    assert bicep.list_item_unique_id  # from the selected sharepointIds facet (Stream embed URL)
 
 
 def test_paging_auth_and_drive_resolution(source: GraphRecordingSource, cloud: MockCloud) -> None:

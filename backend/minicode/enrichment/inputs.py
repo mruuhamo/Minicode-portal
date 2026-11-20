@@ -29,6 +29,7 @@ class EnrichmentInput:
     transcript_source: str | None = None
     web_url: str | None = None
     etag: str | None = None
+    list_item_unique_id: str | None = None
     chunks: list[dict[str, Any]] = field(default_factory=list)
 
     @property
@@ -90,5 +91,6 @@ def load_input(store: BlobStore, recording_id: str, language: str | None = None)
         transcript_source=manifest.transcript_source if manifest else None,
         web_url=meta.get("web_url"),
         etag=meta.get("etag"),
+        list_item_unique_id=meta.get("list_item_unique_id"),
         chunks=chunks,
     )

@@ -29,6 +29,9 @@ GRAPH_BASE = "https://graph.microsoft.com/v1.0"
 GRAPH_SCOPE = "https://graph.microsoft.com/.default"
 VIDEO_EXTENSIONS = {".mp4", ".m4v", ".mov", ".webm", ".mkv"}
 TRANSCRIPT_EXTENSIONS = (".vtt",)
+# sharepointIds is only returned when selected; it carries listItemUniqueId for the Stream embed URL.
+ITEM_SELECT = ("id,name,webUrl,createdDateTime,lastModifiedDateTime,createdBy,video,file,folder,size,eTag,cTag,"
+               "parentReference,deleted,sharepointIds")
 
 
 class GraphClient(RestClient):
@@ -136,7 +139,7 @@ class GraphRecordingSource:
         yield from self._walk(root, self.folder_path, since)
 
     def _walk(self, children_url: str, folder: str, since: datetime | None) -> Iterator[Recording]:
-        items = list(self.client.iter_collection(children_url, params={"$top": 200}))
+        items = list(self.client.iter_collection(children_url, params={"$top": 200, "$select": ITEM_SELECT}))
         transcripts = {PurePosixPath(i["name"]).stem.lower() for i in items if _is_transcript(i)}
         for item in items:
             if "folder" in item:
@@ -167,6 +170,7 @@ class GraphRecordingSource:
             mime_type=(item.get("file") or {}).get("mimeType"),
             folder_path=folder,
             file_name=item["name"],
+            list_item_unique_id=(item.get("sharepointIds") or {}).get("listItemUniqueId"),
         )
 
     # --- content ------------------------------------------------------------------------------
@@ -195,7 +199,8 @@ class GraphRecordingSource:
 
     def latest_cursor(self) -> str:
         """Delta link representing 'now' (no items), stored before a backfill starts."""
-        _, link = self.client.delta(f"/drives/{self.drive_id}/root/delta?token=latest")
+        # $select is kept in the returned deltaLink, so later delta pages also carry sharepointIds.
+        _, link = self.client.delta(f"/drives/{self.drive_id}/root/delta?$select={ITEM_SELECT}&token=latest")
         return link
 
     def list_changes(self, cursor: str) -> tuple[list[Change], str]:

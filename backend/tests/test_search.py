@@ -13,7 +13,7 @@ from minicode.search.backend import Filters, IndexNotFound, SearchRequest, odata
 from minicode.search.indexer import search_key
 from minicode.search.local import LocalSearchBackend, highlight
 from minicode.search.schema import chunks_index, facetable, field_names, recordings_index
-from minicode.search.service import timestamp_url
+from minicode.search.service import stream_embed_url, timestamp_url
 from minicode.taxonomy import load_taxonomy
 
 BICEP = "01MOCK8849C117E2EDD9"
@@ -255,3 +255,14 @@ def test_timestamp_url_encodes_stream_nav() -> None:
     assert q["web"] == ["1"]
     assert json.loads(base64.b64decode(q["nav"][0])) == {"playbackOptions": {"startTimeInSeconds": 75}}
     assert timestamp_url(None, 3) is None
+
+
+def test_stream_embed_url_targets_site_embed_page() -> None:
+    url = stream_embed_url("https://t.sharepoint.com/sites/minicode/Shared%20Documents/a.mp4", "abc-123", 125.7)
+    parts = urlsplit(url)
+    assert parts.netloc == "t.sharepoint.com" and parts.path == "/sites/minicode/_layouts/15/embed.aspx"
+    q = parse_qs(parts.query)
+    assert q["UniqueId"] == ["abc-123"]
+    assert json.loads(q["embed"][0]) == {"ust": True, "hv": "CopyEmbedCode", "st": 125}
+    assert "st" not in json.loads(parse_qs(urlsplit(stream_embed_url("https://t/sites/s/x.mp4", "id")).query)["embed"][0])
+    assert stream_embed_url("https://t/sites/s/x.mp4", None) is None

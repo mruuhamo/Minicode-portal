@@ -65,6 +65,7 @@ def recording_document(doc: dict[str, Any]) -> dict[str, Any]:
         "rawTitle": doc.get("rawTitle"),
         "chunkCount": doc.get("chunkCount") or 0,
         "transcriptSource": doc.get("transcriptSource"),
+        "listItemUniqueId": doc.get("listItemUniqueId"),
         "needsReview": bool((doc.get("enrichment") or {}).get("needsReview")),
         "updatedAt": (doc.get("updatedAt") or datetime.now(UTC).isoformat()).replace("+00:00", "Z"),
     }

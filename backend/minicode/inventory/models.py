@@ -33,3 +33,4 @@ class Recording:
     mime_type: str | None = None
     folder_path: str | None = None
     file_name: str | None = None
+    list_item_unique_id: str | None = None  # sharepointIds.listItemUniqueId -> Stream embed URL (week 4)

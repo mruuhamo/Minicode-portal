@@ -64,6 +64,7 @@ def recordings_index(prefix: str = "minicode") -> dict[str, Any]:
             _f("rawTitle", searchable=True),
             _f("chunkCount", "Edm.Int32"),
             _f("transcriptSource", filterable=True),
+            _f("listItemUniqueId"),  # SharePoint list item id -> Stream embed URL
             _f("needsReview", "Edm.Boolean", filterable=True),
             _f("updatedAt", "Edm.DateTimeOffset", sortable=True, filterable=True),
         ],
