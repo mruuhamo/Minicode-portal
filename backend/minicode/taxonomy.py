@@ -36,6 +36,9 @@ class Dimension:
     def tag_ids(self) -> list[str]:
         return [t.id for t in self.tags]
 
+    def get(self, tag_id: str) -> Tag | None:
+        return next((t for t in self.tags if t.id == tag_id), None)
+
 
 @dataclass(frozen=True)
 class Taxonomy:

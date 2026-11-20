@@ -40,7 +40,8 @@ class Settings:
         return cls(
             source=env.get("MINICODE_SOURCE", default.source).lower(),
             storage=env.get("MINICODE_STORAGE", default.storage).lower(),
-            local_root=Path(env["MINICODE_LOCAL_STORE"]) if env.get("MINICODE_LOCAL_STORE") else default.local_root,
+            local_root=Path(env["MINICODE_LOCAL_STORE"]) if env.get("MINICODE_LOCAL_STORE")
+            else Path(env["MINICODE_DATA_DIR"]) / "blob" if env.get("MINICODE_DATA_DIR") else default.local_root,
             blob_endpoint=env.get("STORAGE_BLOB_ENDPOINT", ""),
             site_id=env.get("MINICODE_SITE_ID", ""),
             drive_id=env.get("MINICODE_DRIVE_ID") or None,

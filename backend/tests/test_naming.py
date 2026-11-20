@@ -47,6 +47,7 @@ from minicode.paths import TITLES_FILE
         ("Azure PaaS tool selection 17.12.2018", "Minicode: Azure PaaS tool selection"),
         # Two capitalized words must not be mistaken for a presenter name.
         ("Minicode: Threat Modeling", "Minicode: Threat Modeling"),
+        ("Minicode_ Threat Modeling-20260621_100114-Meeting Recording", "Minicode: Threat Modeling"),
         ("Minicode: Case Seure - User research and feedback to drive mobile development",
          "Minicode: Case Seure - User research and feedback to drive mobile development"),
     ],

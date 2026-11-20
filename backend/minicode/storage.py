@@ -8,6 +8,7 @@ uses azure-storage-blob with Entra ID (managed identity) auth and user-delegatio
 from __future__ import annotations
 
 import json
+import time
 from collections.abc import Iterator
 from datetime import UTC, datetime, timedelta
 from pathlib import Path, PurePosixPath
@@ -44,6 +45,18 @@ def get_json(store: BlobStore, container: str, path: str) -> Any:
     return json.loads(store.get_bytes(container, path).decode("utf-8"))
 
 
+def atomic_replace(tmp: Path, target: Path, attempts: int = 5) -> None:
+    """tmp -> target atomically; retries the transient PermissionError Windows raises when AV/indexers hold the target."""
+    for attempt in range(attempts):
+        try:
+            tmp.replace(target)
+            return
+        except PermissionError:
+            if attempt == attempts - 1:
+                raise
+            time.sleep(0.05 * (attempt + 1))
+
+
 def _safe_path(path: str) -> PurePosixPath:
     p = PurePosixPath(path)
     if p.is_absolute() or ".." in p.parts or not p.parts:
@@ -65,7 +78,7 @@ class LocalBlobStore:
         f.parent.mkdir(parents=True, exist_ok=True)
         tmp = f.with_name(f.name + ".tmp")
         tmp.write_bytes(data)
-        tmp.replace(f)  # atomic on the same volume, so a crash never leaves half-written state
+        atomic_replace(tmp, f)  # atomic on the same volume, so a crash never leaves half-written state
 
     def get_bytes(self, container: str, path: str) -> bytes:
         f = self._file(container, path)

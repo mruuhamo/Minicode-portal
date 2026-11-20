@@ -6,3 +6,7 @@ azure-identity>=1.17
 azure-storage-blob>=12.20
 # Static ffmpeg binary for extracting audio for Azure AI Speech (Flex Consumption has no ffmpeg).
 imageio-ffmpeg>=0.5
+# Week 3: enrichment (Azure OpenAI SDK; Claude on Foundry uses plain httpx), catalogue, API auth.
+openai>=1.50
+azure-cosmos>=4.7
+PyJWT[crypto]>=2.8

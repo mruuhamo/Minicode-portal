@@ -184,8 +184,8 @@ def normalize_title(raw: str) -> NormalizedTitle:
         presenter, s = m[1], m[2]
     elif (m := TRAILING_PRESENTER_RE.match(s)) and m[2].split()[0] not in NOT_PERSON_WORDS:
         s, presenter = m[1], m[2]
-    elif date_hint and NAME_ONLY_RE.match(s):
-        # Old Teams recordings were auto-named "<organizer> - <timestamp>".
+    elif date_hint and series_inferred and NAME_ONLY_RE.match(s):
+        # Old Teams recordings were auto-named "<organizer> - <timestamp>" (no series prefix).
         presenter, s = s, ""
         notes.append("title contains only a presenter name")
 
