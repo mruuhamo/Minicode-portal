@@ -1,0 +1,72 @@
+# Model comparison eval set (week 3). 20 items:
+#  * 7 with transcripts (the mock ingestion samples in backend/minicode/samples/, 4 Teams VTT + 3 Speech)
+#  * 13 title-only items from data/recordings/titles.txt (tests what a model does with little evidence)
+# Gold labels are a human first pass (Week 3) - review/adjust them in the tag spot check before trusting scores.
+#   topics:        every acceptable topic tag; predicted tags outside this list count as false positives
+#   primary:       the tag a correct answer must contain (recall is measured against `primary` + 0.5 x the rest)
+#   content_type:  acceptable content types
+#   level:         expected level; within +-100 counts as correct
+#   presenter:     expected presenter (null = unknown / not checkable)
+reference_date: "2026-11-20"   # sample dates = reference_date - days_ago (deterministic, inside the 12-month window)
+items:
+  - id: bicep-private-registry
+    sample: bicep-private-registry.vtt
+    gold: {primary: [devops-iac], topics: [devops-iac, azure-platform, internal-tooling], content_type: [knowledge-share, demo, training], level: 200, presenter: Aino Virtanen}
+  - id: transformer-architecture
+    sample: transformer-architecture.vtt
+    gold: {primary: [ai-genai], topics: [ai-genai, data-analytics], content_type: [knowledge-share, training], level: 200, presenter: Mikael Lindqvist}
+  - id: threat-modeling
+    sample: threat-modeling.vtt
+    gold: {primary: [security-identity], topics: [security-identity, software-engineering], content_type: [knowledge-share, training], level: 200, presenter: Jussi Korhonen}
+  - id: slo-monitoring
+    sample: slo-monitoring.vtt
+    gold: {primary: [monitoring-operations], topics: [monitoring-operations, customer-projects, azure-platform], content_type: [case-study, knowledge-share], level: 200, presenter: Pekka Mäkelä}
+  - id: eu-ai-act
+    sample: eu-ai-act.txt
+    gold: {primary: [ai-genai], topics: [ai-genai, security-identity, ways-of-working], content_type: [knowledge-share, training], level: 100, presenter: Laura Nieminen}
+  - id: cd-for-sql
+    sample: cd-for-sql.txt
+    gold: {primary: [devops-iac], topics: [devops-iac, data-analytics, software-engineering], content_type: [knowledge-share, case-study], level: 200, presenter: Timo Salonen}
+  - id: enterprise-ai-search
+    sample: enterprise-ai-search.txt
+    gold: {primary: [ai-genai], topics: [ai-genai, customer-projects, azure-platform, data-analytics], content_type: [case-study], level: 200, presenter: Sara Heikkinen}
+
+  - id: purview-101
+    title: "101 to Microsoft Purview"
+    gold: {primary: [security-identity], topics: [security-identity, data-analytics], content_type: [training, knowledge-share], level: 100, presenter: null}
+  - id: axla-project-intro
+    title: "Project Intro: Axla Customer Portal"
+    gold: {primary: [customer-projects], topics: [customer-projects], content_type: [project-intro], level: 100, presenter: null}
+  - id: fabric-conference-news
+    title: "Europe Fabric Conference news & Microsoft Fabric status update"
+    gold: {primary: [data-analytics], topics: [data-analytics, conferences-events], content_type: [conference-recap], level: 200, presenter: null}
+  - id: fluentassertions
+    title: "Minicode: FluentAssertions"
+    gold: {primary: [testing-qa], topics: [testing-qa, software-engineering], content_type: [knowledge-share, demo], level: 200, presenter: null}
+  - id: subscriptions-management-groups
+    title: "Minicode: Azure Subscriptions and Management groups"
+    gold: {primary: [azure-platform], topics: [azure-platform, security-identity], content_type: [knowledge-share, training], level: 200, presenter: null}
+  - id: docker-containers
+    title: "How I use (docker) containers in development"
+    gold: {primary: [software-engineering], topics: [software-engineering, devops-iac], content_type: [knowledge-share, demo], level: 200, presenter: null}
+  - id: retrospectives
+    title: "Minicode: How retrospectives can help your team"
+    gold: {primary: [ways-of-working], topics: [ways-of-working, people-culture], content_type: [knowledge-share], level: 100, presenter: null}
+  - id: adhd-worklife
+    title: "ADHD & (work)life"
+    gold: {primary: [people-culture], topics: [people-culture], content_type: [knowledge-share], level: 100, presenter: null}
+  - id: location-data-lessons
+    title: "Minicode: Location data and map services lessons learned"
+    gold: {primary: [iot-location], topics: [iot-location, azure-platform, customer-projects], content_type: [case-study, knowledge-share], level: 200, presenter: null}
+  - id: user-research-for-all
+    title: "Minicode: User Research for All"
+    gold: {primary: [ux-design], topics: [ux-design, ways-of-working], content_type: [knowledge-share], level: 100, presenter: null}
+  - id: ghas-azure-devops
+    title: "Minicode: GitHub Advanced Security for Azure DevOps"
+    gold: {primary: [security-identity], topics: [security-identity, devops-iac], content_type: [knowledge-share, demo], level: 200, presenter: null}
+  - id: apim-appgw
+    title: "Minicode: Jurassic truths about apim and appgw"
+    gold: {primary: [integration-api], topics: [integration-api, azure-platform, security-identity], content_type: [knowledge-share], level: 300, presenter: null}
+  - id: ai-series-jani
+    title: "AI series: Join Jani as he presents how he uses AI tools in his daily work"
+    gold: {primary: [ai-genai], topics: [ai-genai, ways-of-working], content_type: [knowledge-share, demo], level: 100, presenter: Jani}

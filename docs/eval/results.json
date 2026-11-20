@@ -1,0 +1,2452 @@
+{
+ "evalset": "evalset.yaml",
+ "evalset_hash": "3263e550276c",
+ "judges": [
+  "mock-b"
+ ],
+ "summaries": [
+  {
+   "model": "mock-a",
+   "client": "mock-a",
+   "items": 20,
+   "failures": 0,
+   "composite": 0.8488,
+   "judge": 0.675,
+   "judge_scores": {
+    "accuracy": 3.4,
+    "tag_relevance": 4.25,
+    "summary_quality": 3.15,
+    "title_quality": 4.0
+   },
+   "metrics": {
+    "topic_precision": 0.892,
+    "topic_recall": 0.95,
+    "topic_f1": 0.895,
+    "content_type": 1.0,
+    "level": 1.0,
+    "presenter": 1.0,
+    "first_try_valid": 1.0,
+    "date_ok": 1.0,
+    "title_clean": 1.0
+   },
+   "with_transcript": 0.904,
+   "title_only": 0.819,
+   "needs_review": 0,
+   "mean_latency": 0.0,
+   "input_tokens": 4047,
+   "output_tokens": 2019,
+   "cost": null
+  },
+  {
+   "model": "mock-b",
+   "client": "mock-b",
+   "items": 20,
+   "failures": 0,
+   "composite": 0.8558,
+   "judge": 0.709,
+   "judge_scores": {
+    "accuracy": 3.75,
+    "tag_relevance": 4.3,
+    "summary_quality": 3.3,
+    "title_quality": 4.0
+   },
+   "metrics": {
+    "topic_precision": 0.892,
+    "topic_recall": 0.95,
+    "topic_f1": 0.895,
+    "content_type": 0.95,
+    "level": 1.0,
+    "presenter": 1.0,
+    "first_try_valid": 1.0,
+    "date_ok": 1.0,
+    "title_clean": 1.0
+   },
+   "with_transcript": 0.925,
+   "title_only": 0.819,
+   "needs_review": 0,
+   "mean_latency": 0.0,
+   "input_tokens": 4047,
+   "output_tokens": 2493,
+   "cost": null
+  }
+ ],
+ "results": [
+  {
+   "item_id": "bicep-private-registry",
+   "model": "mock-a",
+   "ok": true,
+   "output": {
+    "title": "Minicode: Bicep private registry",
+    "summary": "Bicep private registry - a knowledge share / talk on DevOps, CI/CD & infrastructure as code. Hi everyone, welcome to today's minicode.",
+    "presenter": "Aino Virtanen",
+    "date": "2026-11-02",
+    "topics": [
+     "devops-iac"
+    ],
+    "content_type": "knowledge-share",
+    "level": 200,
+    "language": "en-US",
+    "keywords": [],
+    "confidence": 0.55
+   },
+   "checks": {
+    "topic_precision": 1.0,
+    "topic_recall": 1.0,
+    "topic_f1": 1.0,
+    "content_type": 1.0,
+    "level": 1.0,
+    "presenter": 1.0,
+    "date_ok": true,
+    "title_clean": true,
+    "first_try_valid": 1.0,
+    "attempts": 1
+   },
+   "judge": {
+    "scores": {
+     "accuracy": 4,
+     "tag_relevance": 4,
+     "summary_quality": 3,
+     "title_quality": 4
+    },
+    "normalized": 0.688,
+    "judges": [
+     {
+      "judge": "mock-b",
+      "accuracy": 4,
+      "tag_relevance": 4,
+      "summary_quality": 3,
+      "title_quality": 4,
+      "rationale": "Deterministic mock judgement (heuristic, not a real model)."
+     }
+    ]
+   },
+   "composite": 0.8908,
+   "attempts": 1,
+   "needs_review": false,
+   "input_tokens": 558,
+   "output_tokens": 94,
+   "latency_seconds": 0.0,
+   "error": null
+  },
+  {
+   "item_id": "transformer-architecture",
+   "model": "mock-a",
+   "ok": true,
+   "output": {
+    "title": "Minicode: Transformer architecture",
+    "summary": "Transformer architecture - a knowledge share / talk on Data, analytics & Microsoft Fabric, AI, GenAI & machine learning, Software engineering & architecture. Welcome to the DeepData minicode.",
+    "presenter": "Mikael Lindqvist",
+    "date": "2026-10-04",
+    "topics": [
+     "data-analytics",
+     "ai-genai",
+     "software-engineering"
+    ],
+    "content_type": "knowledge-share",
+    "level": 200,
+    "language": "en-US",
+    "keywords": [],
+    "confidence": 0.55
+   },
+   "checks": {
+    "topic_precision": 0.667,
+    "topic_recall": 1.0,
+    "topic_f1": 0.8,
+    "content_type": 1.0,
+    "level": 1.0,
+    "presenter": 1.0,
+    "date_ok": true,
+    "title_clean": true,
+    "first_try_valid": 1.0,
+    "attempts": 1
+   },
+   "judge": {
+    "scores": {
+     "accuracy": 4,
+     "tag_relevance": 5,
+     "summary_quality": 4,
+     "title_quality": 4
+    },
+    "normalized": 0.812,
+    "judges": [
+     {
+      "judge": "mock-b",
+      "accuracy": 4,
+      "tag_relevance": 5,
+      "summary_quality": 4,
+      "title_quality": 4,
+      "rationale": "Deterministic mock judgement (heuristic, not a real model)."
+     }
+    ]
+   },
+   "composite": 0.8842,
+   "attempts": 1,
+   "needs_review": false,
+   "input_tokens": 484,
+   "output_tokens": 120,
+   "latency_seconds": 0.0,
+   "error": null
+  },
+  {
+   "item_id": "threat-modeling",
+   "model": "mock-a",
+   "ok": true,
+   "output": {
+    "title": "Minicode: Threat Modeling",
+    "summary": "Threat Modeling - a knowledge share / talk on Security, identity & compliance. Hello, this minicode is about threat modeling, and why you should do it before writing code.",
+    "presenter": "Jussi Korhonen",
+    "date": "2026-06-21",
+    "topics": [
+     "security-identity"
+    ],
+    "content_type": "knowledge-share",
+    "level": 200,
+    "language": "en-US",
+    "keywords": [],
+    "confidence": 0.55
+   },
+   "checks": {
+    "topic_precision": 1.0,
+    "topic_recall": 1.0,
+    "topic_f1": 1.0,
+    "content_type": 1.0,
+    "level": 1.0,
+    "presenter": 1.0,
+    "date_ok": true,
+    "title_clean": true,
+    "first_try_valid": 1.0,
+    "attempts": 1
+   },
+   "judge": {
+    "scores": {
+     "accuracy": 4,
+     "tag_relevance": 4,
+     "summary_quality": 4,
+     "title_quality": 4
+    },
+    "normalized": 0.75,
+    "judges": [
+     {
+      "judge": "mock-b",
+      "accuracy": 4,
+      "tag_relevance": 4,
+      "summary_quality": 4,
+      "title_quality": 4,
+      "rationale": "Deterministic mock judgement (heuristic, not a real model)."
+     }
+    ]
+   },
+   "composite": 0.9125,
+   "attempts": 1,
+   "needs_review": false,
+   "input_tokens": 441,
+   "output_tokens": 104,
+   "latency_seconds": 0.0,
+   "error": null
+  },
+  {
+   "item_id": "slo-monitoring",
+   "model": "mock-a",
+   "ok": true,
+   "output": {
+    "title": "Minicode: SLO monitoring @ Seure",
+    "summary": "SLO monitoring @ Seure - a knowledge share / talk on Monitoring, observability & operations, Customer projects & project intros. Moikka kaikki!",
+    "presenter": "Pekka Mäkelä",
+    "date": "2026-02-03",
+    "topics": [
+     "monitoring-operations",
+     "customer-projects"
+    ],
+    "content_type": "knowledge-share",
+    "level": 200,
+    "language": "en-US",
+    "keywords": [],
+    "confidence": 0.55
+   },
+   "checks": {
+    "topic_precision": 1.0,
+    "topic_recall": 1.0,
+    "topic_f1": 1.0,
+    "content_type": 1.0,
+    "level": 1.0,
+    "presenter": 1.0,
+    "date_ok": true,
+    "title_clean": true,
+    "first_try_valid": 1.0,
+    "attempts": 1
+   },
+   "judge": {
+    "scores": {
+     "accuracy": 4,
+     "tag_relevance": 5,
+     "summary_quality": 3,
+     "title_quality": 4
+    },
+    "normalized": 0.75,
+    "judges": [
+     {
+      "judge": "mock-b",
+      "accuracy": 4,
+      "tag_relevance": 5,
+      "summary_quality": 3,
+      "title_quality": 4,
+      "rationale": "Deterministic mock judgement (heuristic, not a real model)."
+     }
+    ]
+   },
+   "composite": 0.9125,
+   "attempts": 1,
+   "needs_review": false,
+   "input_tokens": 319,
+   "output_tokens": 104,
+   "latency_seconds": 0.0,
+   "error": null
+  },
+  {
+   "item_id": "eu-ai-act",
+   "model": "mock-a",
+   "ok": true,
+   "output": {
+    "title": "Minicode: EU AI Act - What does it mean for Zure and rest of the world",
+    "summary": "EU AI Act - What does it mean for Zure and rest of the world - a knowledge share / talk on AI, GenAI & machine learning, Security, identity & compliance. Okay, let's get started.",
+    "presenter": "Laura Nieminen",
+    "date": "2026-08-16",
+    "topics": [
+     "ai-genai",
+     "security-identity"
+    ],
+    "content_type": "knowledge-share",
+    "level": 200,
+    "language": "en-US",
+    "keywords": [],
+    "confidence": 0.55
+   },
+   "checks": {
+    "topic_precision": 1.0,
+    "topic_recall": 1.0,
+    "topic_f1": 1.0,
+    "content_type": 1.0,
+    "level": 1.0,
+    "presenter": 1.0,
+    "date_ok": true,
+    "title_clean": true,
+    "first_try_valid": 1.0,
+    "attempts": 1
+   },
+   "judge": {
+    "scores": {
+     "accuracy": 4,
+     "tag_relevance": 5,
+     "summary_quality": 4,
+     "title_quality": 4
+    },
+    "normalized": 0.812,
+    "judges": [
+     {
+      "judge": "mock-b",
+      "accuracy": 4,
+      "tag_relevance": 5,
+      "summary_quality": 4,
+      "title_quality": 4,
+      "rationale": "Deterministic mock judgement (heuristic, not a real model)."
+     }
+    ]
+   },
+   "composite": 0.9342,
+   "attempts": 1,
+   "needs_review": false,
+   "input_tokens": 418,
+   "output_tokens": 120,
+   "latency_seconds": 0.0,
+   "error": null
+  },
+  {
+   "item_id": "cd-for-sql",
+   "model": "mock-a",
+   "ok": true,
+   "output": {
+    "title": "Minicode: CD for SQL databases",
+    "summary": "CD for SQL databases - a knowledge share / talk on DevOps, CI/CD & infrastructure as code, Data, analytics & Microsoft Fabric. No niin, aloitetaan.",
+    "presenter": "Timo Salonen",
+    "date": "2025-12-21",
+    "topics": [
+     "devops-iac",
+     "data-analytics"
+    ],
+    "content_type": "knowledge-share",
+    "level": 200,
+    "language": "fi-FI",
+    "keywords": [],
+    "confidence": 0.55
+   },
+   "checks": {
+    "topic_precision": 1.0,
+    "topic_recall": 1.0,
+    "topic_f1": 1.0,
+    "content_type": 1.0,
+    "level": 1.0,
+    "presenter": 1.0,
+    "date_ok": true,
+    "title_clean": true,
+    "first_try_valid": 1.0,
+    "attempts": 1
+   },
+   "judge": {
+    "scores": {
+     "accuracy": 4,
+     "tag_relevance": 5,
+     "summary_quality": 3,
+     "title_quality": 4
+    },
+    "normalized": 0.75,
+    "judges": [
+     {
+      "judge": "mock-b",
+      "accuracy": 4,
+      "tag_relevance": 5,
+      "summary_quality": 3,
+      "title_quality": 4,
+      "rationale": "Deterministic mock judgement (heuristic, not a real model)."
+     }
+    ]
+   },
+   "composite": 0.9125,
+   "attempts": 1,
+   "needs_review": false,
+   "input_tokens": 300,
+   "output_tokens": 101,
+   "latency_seconds": 0.0,
+   "error": null
+  },
+  {
+   "item_id": "enterprise-ai-search",
+   "model": "mock-a",
+   "ok": true,
+   "output": {
+    "title": "Minicode: Enterprise AI Search: lessons learnt from Valmet PoC project",
+    "summary": "Enterprise AI Search: lessons learnt from Valmet PoC project - a case study, lessons learned & retrospectives on AI, GenAI & machine learning, Agile, product & ways of working, Customer projects & project intros. Hi all, I'll go through what we learned building an enterprise AI search proof of concept for Valmet.",
+    "presenter": "Sara Heikkinen",
+    "date": "2026-04-29",
+    "topics": [
+     "ai-genai",
+     "ways-of-working",
+     "customer-projects"
+    ],
+    "content_type": "case-study",
+    "level": 200,
+    "language": "en-US",
+    "keywords": [],
+    "confidence": 0.55
+   },
+   "checks": {
+    "topic_precision": 0.667,
+    "topic_recall": 1.0,
+    "topic_f1": 0.8,
+    "content_type": 1.0,
+    "level": 1.0,
+    "presenter": 1.0,
+    "date_ok": true,
+    "title_clean": true,
+    "first_try_valid": 1.0,
+    "attempts": 1
+   },
+   "judge": {
+    "scores": {
+     "accuracy": 4,
+     "tag_relevance": 5,
+     "summary_quality": 4,
+     "title_quality": 4
+    },
+    "normalized": 0.812,
+    "judges": [
+     {
+      "judge": "mock-b",
+      "accuracy": 4,
+      "tag_relevance": 5,
+      "summary_quality": 4,
+      "title_quality": 4,
+      "rationale": "Deterministic mock judgement (heuristic, not a real model)."
+     }
+    ]
+   },
+   "composite": 0.8842,
+   "attempts": 1,
+   "needs_review": false,
+   "input_tokens": 394,
+   "output_tokens": 157,
+   "latency_seconds": 0.0,
+   "error": null
+  },
+  {
+   "item_id": "purview-101",
+   "model": "mock-a",
+   "ok": true,
+   "output": {
+    "title": "Minicode: 101 to Microsoft Purview",
+    "summary": "101 to Microsoft Purview - a knowledge share / talk on Security, identity & compliance.",
+    "presenter": null,
+    "date": null,
+    "topics": [
+     "security-identity"
+    ],
+    "content_type": "knowledge-share",
+    "level": 200,
+    "language": "en-US",
+    "keywords": [],
+    "confidence": 0.55
+   },
+   "checks": {
+    "topic_precision": 1.0,
+    "topic_recall": 1.0,
+    "topic_f1": 1.0,
+    "content_type": 1.0,
+    "level": 1.0,
+    "presenter": null,
+    "date_ok": true,
+    "title_clean": true,
+    "first_try_valid": 1.0,
+    "attempts": 1
+   },
+   "judge": {
+    "scores": {
+     "accuracy": 3,
+     "tag_relevance": 4,
+     "summary_quality": 2,
+     "title_quality": 4
+    },
+    "normalized": 0.562,
+    "judges": [
+     {
+      "judge": "mock-b",
+      "accuracy": 3,
+      "tag_relevance": 4,
+      "summary_quality": 2,
+      "title_quality": 4,
+      "rationale": "Deterministic mock judgement (heuristic, not a real model)."
+     }
+    ]
+   },
+   "composite": 0.8297,
+   "attempts": 1,
+   "needs_review": false,
+   "input_tokens": 79,
+   "output_tokens": 80,
+   "latency_seconds": 0.0,
+   "error": null
+  },
+  {
+   "item_id": "axla-project-intro",
+   "model": "mock-a",
+   "ok": true,
+   "output": {
+    "title": "Project Intro: Axla Customer Portal",
+    "summary": "Axla Customer Portal - a project / customer introduction on Customer projects & project intros.",
+    "presenter": null,
+    "date": null,
+    "topics": [
+     "customer-projects"
+    ],
+    "content_type": "project-intro",
+    "level": 200,
+    "language": "en-US",
+    "keywords": [],
+    "confidence": 0.55
+   },
+   "checks": {
+    "topic_precision": 1.0,
+    "topic_recall": 1.0,
+    "topic_f1": 1.0,
+    "content_type": 1.0,
+    "level": 1.0,
+    "presenter": null,
+    "date_ok": true,
+    "title_clean": true,
+    "first_try_valid": 1.0,
+    "attempts": 1
+   },
+   "judge": {
+    "scores": {
+     "accuracy": 3,
+     "tag_relevance": 4,
+     "summary_quality": 3,
+     "title_quality": 4
+    },
+    "normalized": 0.625,
+    "judges": [
+     {
+      "judge": "mock-b",
+      "accuracy": 3,
+      "tag_relevance": 4,
+      "summary_quality": 3,
+      "title_quality": 4,
+      "rationale": "Deterministic mock judgement (heuristic, not a real model)."
+     }
+    ]
+   },
+   "composite": 0.8542,
+   "attempts": 1,
+   "needs_review": false,
+   "input_tokens": 82,
+   "output_tokens": 82,
+   "latency_seconds": 0.0,
+   "error": null
+  },
+  {
+   "item_id": "fabric-conference-news",
+   "model": "mock-a",
+   "ok": true,
+   "output": {
+    "title": "Minicode: Europe Fabric Conference news & Microsoft Fabric status update",
+    "summary": "Europe Fabric Conference news & Microsoft Fabric status update - a conference / event recap on Data, analytics & Microsoft Fabric, Conferences & community events.",
+    "presenter": null,
+    "date": null,
+    "topics": [
+     "data-analytics",
+     "conferences-events"
+    ],
+    "content_type": "conference-recap",
+    "level": 200,
+    "language": "en-US",
+    "keywords": [],
+    "confidence": 0.55
+   },
+   "checks": {
+    "topic_precision": 1.0,
+    "topic_recall": 1.0,
+    "topic_f1": 1.0,
+    "content_type": 1.0,
+    "level": 1.0,
+    "presenter": null,
+    "date_ok": true,
+    "title_clean": true,
+    "first_try_valid": 1.0,
+    "attempts": 1
+   },
+   "judge": {
+    "scores": {
+     "accuracy": 3,
+     "tag_relevance": 4,
+     "summary_quality": 4,
+     "title_quality": 4
+    },
+    "normalized": 0.688,
+    "judges": [
+     {
+      "judge": "mock-b",
+      "accuracy": 3,
+      "tag_relevance": 4,
+      "summary_quality": 4,
+      "title_quality": 4,
+      "rationale": "Deterministic mock judgement (heuristic, not a real model)."
+     }
+    ]
+   },
+   "composite": 0.8787,
+   "attempts": 1,
+   "needs_review": false,
+   "input_tokens": 98,
+   "output_tokens": 113,
+   "latency_seconds": 0.0,
+   "error": null
+  },
+  {
+   "item_id": "fluentassertions",
+   "model": "mock-a",
+   "ok": true,
+   "output": {
+    "title": "Minicode: FluentAssertions",
+    "summary": "FluentAssertions - a knowledge share / talk on Testing & quality assurance.",
+    "presenter": null,
+    "date": null,
+    "topics": [
+     "testing-qa"
+    ],
+    "content_type": "knowledge-share",
+    "level": 200,
+    "language": "en-US",
+    "keywords": [],
+    "confidence": 0.55
+   },
+   "checks": {
+    "topic_precision": 1.0,
+    "topic_recall": 1.0,
+    "topic_f1": 1.0,
+    "content_type": 1.0,
+    "level": 1.0,
+    "presenter": null,
+    "date_ok": true,
+    "title_clean": true,
+    "first_try_valid": 1.0,
+    "attempts": 1
+   },
+   "judge": {
+    "scores": {
+     "accuracy": 3,
+     "tag_relevance": 4,
+     "summary_quality": 2,
+     "title_quality": 4
+    },
+    "normalized": 0.562,
+    "judges": [
+     {
+      "judge": "mock-b",
+      "accuracy": 3,
+      "tag_relevance": 4,
+      "summary_quality": 2,
+      "title_quality": 4,
+      "rationale": "Deterministic mock judgement (heuristic, not a real model)."
+     }
+    ]
+   },
+   "composite": 0.8297,
+   "attempts": 1,
+   "needs_review": false,
+   "input_tokens": 78,
+   "output_tokens": 73,
+   "latency_seconds": 0.0,
+   "error": null
+  },
+  {
+   "item_id": "subscriptions-management-groups",
+   "model": "mock-a",
+   "ok": true,
+   "output": {
+    "title": "Minicode: Azure Subscriptions and Management groups",
+    "summary": "Azure Subscriptions and Management groups - a knowledge share / talk on Azure platform & cloud infrastructure.",
+    "presenter": null,
+    "date": null,
+    "topics": [
+     "azure-platform"
+    ],
+    "content_type": "knowledge-share",
+    "level": 200,
+    "language": "en-US",
+    "keywords": [],
+    "confidence": 0.55
+   },
+   "checks": {
+    "topic_precision": 1.0,
+    "topic_recall": 1.0,
+    "topic_f1": 1.0,
+    "content_type": 1.0,
+    "level": 1.0,
+    "presenter": null,
+    "date_ok": true,
+    "title_clean": true,
+    "first_try_valid": 1.0,
+    "attempts": 1
+   },
+   "judge": {
+    "scores": {
+     "accuracy": 3,
+     "tag_relevance": 4,
+     "summary_quality": 3,
+     "title_quality": 4
+    },
+    "normalized": 0.625,
+    "judges": [
+     {
+      "judge": "mock-b",
+      "accuracy": 3,
+      "tag_relevance": 4,
+      "summary_quality": 3,
+      "title_quality": 4,
+      "rationale": "Deterministic mock judgement (heuristic, not a real model)."
+     }
+    ]
+   },
+   "composite": 0.8542,
+   "attempts": 1,
+   "needs_review": false,
+   "input_tokens": 90,
+   "output_tokens": 89,
+   "latency_seconds": 0.0,
+   "error": null
+  },
+  {
+   "item_id": "docker-containers",
+   "model": "mock-a",
+   "ok": true,
+   "output": {
+    "title": "Minicode: How I use (docker) containers in development",
+    "summary": "How I use (docker) containers in development - a knowledge share / talk on DevOps, CI/CD & infrastructure as code, Agile, product & ways of working.",
+    "presenter": null,
+    "date": null,
+    "topics": [
+     "devops-iac",
+     "ways-of-working"
+    ],
+    "content_type": "knowledge-share",
+    "level": 200,
+    "language": "en-US",
+    "keywords": [],
+    "confidence": 0.55
+   },
+   "checks": {
+    "topic_precision": 0.5,
+    "topic_recall": 0.0,
+    "topic_f1": 0.0,
+    "content_type": 1.0,
+    "level": 1.0,
+    "presenter": null,
+    "date_ok": true,
+    "title_clean": true,
+    "first_try_valid": 1.0,
+    "attempts": 1
+   },
+   "judge": {
+    "scores": {
+     "accuracy": 3,
+     "tag_relevance": 4,
+     "summary_quality": 3,
+     "title_quality": 4
+    },
+    "normalized": 0.625,
+    "judges": [
+     {
+      "judge": "mock-b",
+      "accuracy": 3,
+      "tag_relevance": 4,
+      "summary_quality": 3,
+      "title_quality": 4,
+      "rationale": "Deterministic mock judgement (heuristic, not a real model)."
+     }
+    ]
+   },
+   "composite": 0.5764,
+   "attempts": 1,
+   "needs_review": false,
+   "input_tokens": 89,
+   "output_tokens": 103,
+   "latency_seconds": 0.0,
+   "error": null
+  },
+  {
+   "item_id": "retrospectives",
+   "model": "mock-a",
+   "ok": true,
+   "output": {
+    "title": "Minicode: How retrospectives can help your team",
+    "summary": "How retrospectives can help your team - a knowledge share / talk on Agile, product & ways of working.",
+    "presenter": null,
+    "date": null,
+    "topics": [
+     "ways-of-working"
+    ],
+    "content_type": "knowledge-share",
+    "level": 200,
+    "language": "en-US",
+    "keywords": [],
+    "confidence": 0.55
+   },
+   "checks": {
+    "topic_precision": 1.0,
+    "topic_recall": 1.0,
+    "topic_f1": 1.0,
+    "content_type": 1.0,
+    "level": 1.0,
+    "presenter": null,
+    "date_ok": true,
+    "title_clean": true,
+    "first_try_valid": 1.0,
+    "attempts": 1
+   },
+   "judge": {
+    "scores": {
+     "accuracy": 3,
+     "tag_relevance": 4,
+     "summary_quality": 3,
+     "title_quality": 4
+    },
+    "normalized": 0.625,
+    "judges": [
+     {
+      "judge": "mock-b",
+      "accuracy": 3,
+      "tag_relevance": 4,
+      "summary_quality": 3,
+      "title_quality": 4,
+      "rationale": "Deterministic mock judgement (heuristic, not a real model)."
+     }
+    ]
+   },
+   "composite": 0.8542,
+   "attempts": 1,
+   "needs_review": false,
+   "input_tokens": 88,
+   "output_tokens": 86,
+   "latency_seconds": 0.0,
+   "error": null
+  },
+  {
+   "item_id": "adhd-worklife",
+   "model": "mock-a",
+   "ok": true,
+   "output": {
+    "title": "Minicode: ADHD & (work)life",
+    "summary": "ADHD & (work)life - a knowledge share / talk on People, HR & culture.",
+    "presenter": null,
+    "date": null,
+    "topics": [
+     "people-culture"
+    ],
+    "content_type": "knowledge-share",
+    "level": 200,
+    "language": "en-US",
+    "keywords": [],
+    "confidence": 0.55
+   },
+   "checks": {
+    "topic_precision": 1.0,
+    "topic_recall": 1.0,
+    "topic_f1": 1.0,
+    "content_type": 1.0,
+    "level": 1.0,
+    "presenter": null,
+    "date_ok": true,
+    "title_clean": true,
+    "first_try_valid": 1.0,
+    "attempts": 1
+   },
+   "judge": {
+    "scores": {
+     "accuracy": 3,
+     "tag_relevance": 4,
+     "summary_quality": 2,
+     "title_quality": 4
+    },
+    "normalized": 0.562,
+    "judges": [
+     {
+      "judge": "mock-b",
+      "accuracy": 3,
+      "tag_relevance": 4,
+      "summary_quality": 2,
+      "title_quality": 4,
+      "rationale": "Deterministic mock judgement (heuristic, not a real model)."
+     }
+    ]
+   },
+   "composite": 0.8297,
+   "attempts": 1,
+   "needs_review": false,
+   "input_tokens": 76,
+   "output_tokens": 73,
+   "latency_seconds": 0.0,
+   "error": null
+  },
+  {
+   "item_id": "location-data-lessons",
+   "model": "mock-a",
+   "ok": true,
+   "output": {
+    "title": "Minicode: Location data and map services lessons learned",
+    "summary": "Location data and map services lessons learned - a case study, lessons learned & retrospectives on Data, analytics & Microsoft Fabric, IoT, location & digital twins, Agile, product & ways of working.",
+    "presenter": null,
+    "date": null,
+    "topics": [
+     "data-analytics",
+     "iot-location",
+     "ways-of-working"
+    ],
+    "content_type": "case-study",
+    "level": 200,
+    "language": "en-US",
+    "keywords": [],
+    "confidence": 0.55
+   },
+   "checks": {
+    "topic_precision": 0.333,
+    "topic_recall": 1.0,
+    "topic_f1": 0.5,
+    "content_type": 1.0,
+    "level": 1.0,
+    "presenter": null,
+    "date_ok": true,
+    "title_clean": true,
+    "first_try_valid": 1.0,
+    "attempts": 1
+   },
+   "judge": {
+    "scores": {
+     "accuracy": 3,
+     "tag_relevance": 4,
+     "summary_quality": 4,
+     "title_quality": 4
+    },
+    "normalized": 0.688,
+    "judges": [
+     {
+      "judge": "mock-b",
+      "accuracy": 3,
+      "tag_relevance": 4,
+      "summary_quality": 4,
+      "title_quality": 4,
+      "rationale": "Deterministic mock judgement (heuristic, not a real model)."
+     }
+    ]
+   },
+   "composite": 0.7398,
+   "attempts": 1,
+   "needs_review": false,
+   "input_tokens": 93,
+   "output_tokens": 120,
+   "latency_seconds": 0.0,
+   "error": null
+  },
+  {
+   "item_id": "user-research-for-all",
+   "model": "mock-a",
+   "ok": true,
+   "output": {
+    "title": "Minicode: User Research for All",
+    "summary": "User Research for All - a knowledge share / talk on UX, design & accessibility.",
+    "presenter": null,
+    "date": null,
+    "topics": [
+     "ux-design"
+    ],
+    "content_type": "knowledge-share",
+    "level": 200,
+    "language": "en-US",
+    "keywords": [],
+    "confidence": 0.55
+   },
+   "checks": {
+    "topic_precision": 1.0,
+    "topic_recall": 1.0,
+    "topic_f1": 1.0,
+    "content_type": 1.0,
+    "level": 1.0,
+    "presenter": null,
+    "date_ok": true,
+    "title_clean": true,
+    "first_try_valid": 1.0,
+    "attempts": 1
+   },
+   "judge": {
+    "scores": {
+     "accuracy": 3,
+     "tag_relevance": 4,
+     "summary_quality": 2,
+     "title_quality": 4
+    },
+    "normalized": 0.562,
+    "judges": [
+     {
+      "judge": "mock-b",
+      "accuracy": 3,
+      "tag_relevance": 4,
+      "summary_quality": 2,
+      "title_quality": 4,
+      "rationale": "Deterministic mock judgement (heuristic, not a real model)."
+     }
+    ]
+   },
+   "composite": 0.8297,
+   "attempts": 1,
+   "needs_review": false,
+   "input_tokens": 80,
+   "output_tokens": 75,
+   "latency_seconds": 0.0,
+   "error": null
+  },
+  {
+   "item_id": "ghas-azure-devops",
+   "model": "mock-a",
+   "ok": true,
+   "output": {
+    "title": "Minicode: GitHub Advanced Security for Azure DevOps",
+    "summary": "GitHub Advanced Security for Azure DevOps - a knowledge share / talk on Azure platform & cloud infrastructure, DevOps, CI/CD & infrastructure as code, Security, identity & compliance.",
+    "presenter": null,
+    "date": null,
+    "topics": [
+     "azure-platform",
+     "devops-iac",
+     "security-identity"
+    ],
+    "content_type": "knowledge-share",
+    "level": 200,
+    "language": "en-US",
+    "keywords": [],
+    "confidence": 0.55
+   },
+   "checks": {
+    "topic_precision": 0.667,
+    "topic_recall": 1.0,
+    "topic_f1": 0.8,
+    "content_type": 1.0,
+    "level": 1.0,
+    "presenter": null,
+    "date_ok": true,
+    "title_clean": true,
+    "first_try_valid": 1.0,
+    "attempts": 1
+   },
+   "judge": {
+    "scores": {
+     "accuracy": 3,
+     "tag_relevance": 4,
+     "summary_quality": 4,
+     "title_quality": 4
+    },
+    "normalized": 0.688,
+    "judges": [
+     {
+      "judge": "mock-b",
+      "accuracy": 3,
+      "tag_relevance": 4,
+      "summary_quality": 4,
+      "title_quality": 4,
+      "rationale": "Deterministic mock judgement (heuristic, not a real model)."
+     }
+    ]
+   },
+   "composite": 0.8231,
+   "attempts": 1,
+   "needs_review": false,
+   "input_tokens": 90,
+   "output_tokens": 116,
+   "latency_seconds": 0.0,
+   "error": null
+  },
+  {
+   "item_id": "apim-appgw",
+   "model": "mock-a",
+   "ok": true,
+   "output": {
+    "title": "Minicode: Jurassic truths about apim and appgw",
+    "summary": "Jurassic truths about apim and appgw - a knowledge share / talk on Azure platform & cloud infrastructure, Integration, messaging & APIs.",
+    "presenter": null,
+    "date": null,
+    "topics": [
+     "azure-platform",
+     "integration-api"
+    ],
+    "content_type": "knowledge-share",
+    "level": 200,
+    "language": "en-US",
+    "keywords": [],
+    "confidence": 0.55
+   },
+   "checks": {
+    "topic_precision": 1.0,
+    "topic_recall": 1.0,
+    "topic_f1": 1.0,
+    "content_type": 1.0,
+    "level": 1.0,
+    "presenter": null,
+    "date_ok": true,
+    "title_clean": true,
+    "first_try_valid": 1.0,
+    "attempts": 1
+   },
+   "judge": {
+    "scores": {
+     "accuracy": 3,
+     "tag_relevance": 4,
+     "summary_quality": 3,
+     "title_quality": 4
+    },
+    "normalized": 0.625,
+    "judges": [
+     {
+      "judge": "mock-b",
+      "accuracy": 3,
+      "tag_relevance": 4,
+      "summary_quality": 3,
+      "title_quality": 4,
+      "rationale": "Deterministic mock judgement (heuristic, not a real model)."
+     }
+    ]
+   },
+   "composite": 0.8542,
+   "attempts": 1,
+   "needs_review": false,
+   "input_tokens": 88,
+   "output_tokens": 99,
+   "latency_seconds": 0.0,
+   "error": null
+  },
+  {
+   "item_id": "ai-series-jani",
+   "model": "mock-a",
+   "ok": true,
+   "output": {
+    "title": "AI Series: Join Jani as he presents how he uses AI tools in his daily work",
+    "summary": "Join Jani as he presents how he uses AI tools in his daily work - a knowledge share / talk on AI, GenAI & machine learning, Agile, product & ways of working.",
+    "presenter": "Jani",
+    "date": null,
+    "topics": [
+     "ai-genai",
+     "ways-of-working"
+    ],
+    "content_type": "knowledge-share",
+    "level": 200,
+    "language": "en-US",
+    "keywords": [],
+    "confidence": 0.55
+   },
+   "checks": {
+    "topic_precision": 1.0,
+    "topic_recall": 1.0,
+    "topic_f1": 1.0,
+    "content_type": 1.0,
+    "level": 1.0,
+    "presenter": 1.0,
+    "date_ok": true,
+    "title_clean": true,
+    "first_try_valid": 1.0,
+    "attempts": 1
+   },
+   "judge": {
+    "scores": {
+     "accuracy": 4,
+     "tag_relevance": 4,
+     "summary_quality": 3,
+     "title_quality": 4
+    },
+    "normalized": 0.688,
+    "judges": [
+     {
+      "judge": "mock-b",
+      "accuracy": 4,
+      "tag_relevance": 4,
+      "summary_quality": 3,
+      "title_quality": 4,
+      "rationale": "Deterministic mock judgement (heuristic, not a real model)."
+     }
+    ]
+   },
+   "composite": 0.8908,
+   "attempts": 1,
+   "needs_review": false,
+   "input_tokens": 102,
+   "output_tokens": 110,
+   "latency_seconds": 0.0,
+   "error": null
+  },
+  {
+   "item_id": "bicep-private-registry",
+   "model": "mock-b",
+   "ok": true,
+   "output": {
+    "title": "Minicode: Bicep private registry",
+    "summary": "Bicep private registry - a case study, lessons learned & retrospectives on DevOps, CI/CD & infrastructure as code, Azure platform & cloud infrastructure. Hi everyone, welcome to today's minicode. I'm going to talk about Bicep private registries. The problem we had: every project copied the same storage, Key Vault and Function App modules, and they slowly drifted apart.",
+    "presenter": "Aino Virtanen",
+    "date": "2026-11-02",
+    "topics": [
+     "devops-iac",
+     "azure-platform"
+    ],
+    "content_type": "case-study",
+    "level": 200,
+    "language": "en-US",
+    "keywords": [
+     "aino",
+     "bicep",
+     "registry",
+     "virtanen",
+     "modules",
+     "publish",
+     "module",
+     "storage"
+    ],
+    "confidence": 0.8
+   },
+   "checks": {
+    "topic_precision": 1.0,
+    "topic_recall": 1.0,
+    "topic_f1": 1.0,
+    "content_type": 0.0,
+    "level": 1.0,
+    "presenter": 1.0,
+    "date_ok": true,
+    "title_clean": true,
+    "first_try_valid": 1.0,
+    "attempts": 1
+   },
+   "judge": {
+    "scores": {
+     "accuracy": 5,
+     "tag_relevance": 5,
+     "summary_quality": 4,
+     "title_quality": 4
+    },
+    "normalized": 0.875,
+    "judges": [
+     {
+      "judge": "mock-b",
+      "accuracy": 5,
+      "tag_relevance": 5,
+      "summary_quality": 4,
+      "title_quality": 4,
+      "rationale": "Deterministic mock judgement (heuristic, not a real model)."
+     }
+    ]
+   },
+   "composite": 0.8562,
+   "attempts": 1,
+   "needs_review": false,
+   "input_tokens": 558,
+   "output_tokens": 177,
+   "latency_seconds": 0.02,
+   "error": null
+  },
+  {
+   "item_id": "transformer-architecture",
+   "model": "mock-b",
+   "ok": true,
+   "output": {
+    "title": "Minicode: Transformer architecture",
+    "summary": "Transformer architecture - a knowledge share / talk on AI, GenAI & machine learning, Data, analytics & Microsoft Fabric, Software engineering & architecture. Welcome to the DeepData minicode. Today: the transformer architecture, the T in GPT. Before transformers we had recurrent networks that read text one token at a time.",
+    "presenter": "Mikael Lindqvist",
+    "date": "2026-10-04",
+    "topics": [
+     "ai-genai",
+     "data-analytics",
+     "software-engineering"
+    ],
+    "content_type": "knowledge-share",
+    "level": 200,
+    "language": "en-US",
+    "keywords": [
+     "token",
+     "attention",
+     "mikael",
+     "lindqvist",
+     "models",
+     "before",
+     "transformers",
+     "text"
+    ],
+    "confidence": 0.8
+   },
+   "checks": {
+    "topic_precision": 0.667,
+    "topic_recall": 1.0,
+    "topic_f1": 0.8,
+    "content_type": 1.0,
+    "level": 1.0,
+    "presenter": 1.0,
+    "date_ok": true,
+    "title_clean": true,
+    "first_try_valid": 1.0,
+    "attempts": 1
+   },
+   "judge": {
+    "scores": {
+     "accuracy": 5,
+     "tag_relevance": 5,
+     "summary_quality": 4,
+     "title_quality": 4
+    },
+    "normalized": 0.875,
+    "judges": [
+     {
+      "judge": "mock-b",
+      "accuracy": 5,
+      "tag_relevance": 5,
+      "summary_quality": 4,
+      "title_quality": 4,
+      "rationale": "Deterministic mock judgement (heuristic, not a real model)."
+     }
+    ]
+   },
+   "composite": 0.9062,
+   "attempts": 1,
+   "needs_review": false,
+   "input_tokens": 484,
+   "output_tokens": 174,
+   "latency_seconds": 0.01,
+   "error": null
+  },
+  {
+   "item_id": "threat-modeling",
+   "model": "mock-b",
+   "ok": true,
+   "output": {
+    "title": "Minicode: Threat Modeling",
+    "summary": "Threat Modeling - a knowledge share / talk on Security, identity & compliance. Hello, this minicode is about threat modeling, and why you should do it before writing code. Threat modeling answers four questions: what are we building, what can go wrong, what are we going to do about it, and did we do a good job. We start from a data flow diagram.",
+    "presenter": "Jussi Korhonen",
+    "date": "2026-06-21",
+    "topics": [
+     "security-identity"
+    ],
+    "content_type": "knowledge-share",
+    "level": 200,
+    "language": "en-US",
+    "keywords": [
+     "threat",
+     "jussi",
+     "korhonen",
+     "modeling",
+     "project",
+     "data",
+     "tool",
+     "whiteboard"
+    ],
+    "confidence": 0.8
+   },
+   "checks": {
+    "topic_precision": 1.0,
+    "topic_recall": 1.0,
+    "topic_f1": 1.0,
+    "content_type": 1.0,
+    "level": 1.0,
+    "presenter": 1.0,
+    "date_ok": true,
+    "title_clean": true,
+    "first_try_valid": 1.0,
+    "attempts": 1
+   },
+   "judge": {
+    "scores": {
+     "accuracy": 5,
+     "tag_relevance": 4,
+     "summary_quality": 4,
+     "title_quality": 4
+    },
+    "normalized": 0.812,
+    "judges": [
+     {
+      "judge": "mock-b",
+      "accuracy": 5,
+      "tag_relevance": 4,
+      "summary_quality": 4,
+      "title_quality": 4,
+      "rationale": "Deterministic mock judgement (heuristic, not a real model)."
+     }
+    ]
+   },
+   "composite": 0.9342,
+   "attempts": 1,
+   "needs_review": false,
+   "input_tokens": 441,
+   "output_tokens": 168,
+   "latency_seconds": 0.01,
+   "error": null
+  },
+  {
+   "item_id": "slo-monitoring",
+   "model": "mock-b",
+   "ok": true,
+   "output": {
+    "title": "Minicode: SLO monitoring @ Seure",
+    "summary": "SLO monitoring @ Seure - a knowledge share / talk on Monitoring, observability & operations, Customer projects & project intros. Moikka kaikki! Tänään puhun siitä, miten otimme SLO-seurannan käyttöön Seuren projektissa. SLO eli service level objective on tavoite, esimerkiksi että 99,5 % API-kutsuista onnistuu ja vastaa alle sekunnissa.",
+    "presenter": "Pekka Mäkelä",
+    "date": "2026-02-03",
+    "topics": [
+     "monitoring-operations",
+     "customer-projects"
+    ],
+    "content_type": "knowledge-share",
+    "level": 200,
+    "language": "en-US",
+    "keywords": [
+     "pekka",
+     "mäkelä",
+     "miten",
+     "moikka",
+     "tänään",
+     "puhun",
+     "siitä",
+     "otimme"
+    ],
+    "confidence": 0.8
+   },
+   "checks": {
+    "topic_precision": 1.0,
+    "topic_recall": 1.0,
+    "topic_f1": 1.0,
+    "content_type": 1.0,
+    "level": 1.0,
+    "presenter": 1.0,
+    "date_ok": true,
+    "title_clean": true,
+    "first_try_valid": 1.0,
+    "attempts": 1
+   },
+   "judge": {
+    "scores": {
+     "accuracy": 5,
+     "tag_relevance": 5,
+     "summary_quality": 4,
+     "title_quality": 4
+    },
+    "normalized": 0.875,
+    "judges": [
+     {
+      "judge": "mock-b",
+      "accuracy": 5,
+      "tag_relevance": 5,
+      "summary_quality": 4,
+      "title_quality": 4,
+      "rationale": "Deterministic mock judgement (heuristic, not a real model)."
+     }
+    ]
+   },
+   "composite": 0.9563,
+   "attempts": 1,
+   "needs_review": false,
+   "input_tokens": 319,
+   "output_tokens": 171,
+   "latency_seconds": 0.01,
+   "error": null
+  },
+  {
+   "item_id": "eu-ai-act",
+   "model": "mock-b",
+   "ok": true,
+   "output": {
+    "title": "Minicode: EU AI Act - What does it mean for Zure and rest of the world",
+    "summary": "EU AI Act - What does it mean for Zure and rest of the world - a knowledge share / talk on AI, GenAI & machine learning, Security, identity & compliance. Okay, let's get started. This session is about the EU AI Act and what it means for us and our customers. The AI Act entered into force in August 2024 and the obligations apply in phases until 2027.",
+    "presenter": "Laura Nieminen",
+    "date": "2026-08-16",
+    "topics": [
+     "ai-genai",
+     "security-identity"
+    ],
+    "content_type": "knowledge-share",
+    "level": 200,
+    "language": "en-US",
+    "keywords": [
+     "speaker",
+     "risk",
+     "obligations",
+     "systems",
+     "need",
+     "limited",
+     "keep",
+     "data"
+    ],
+    "confidence": 0.8
+   },
+   "checks": {
+    "topic_precision": 1.0,
+    "topic_recall": 1.0,
+    "topic_f1": 1.0,
+    "content_type": 1.0,
+    "level": 1.0,
+    "presenter": 1.0,
+    "date_ok": true,
+    "title_clean": true,
+    "first_try_valid": 1.0,
+    "attempts": 1
+   },
+   "judge": {
+    "scores": {
+     "accuracy": 5,
+     "tag_relevance": 5,
+     "summary_quality": 4,
+     "title_quality": 4
+    },
+    "normalized": 0.875,
+    "judges": [
+     {
+      "judge": "mock-b",
+      "accuracy": 5,
+      "tag_relevance": 5,
+      "summary_quality": 4,
+      "title_quality": 4,
+      "rationale": "Deterministic mock judgement (heuristic, not a real model)."
+     }
+    ]
+   },
+   "composite": 0.9563,
+   "attempts": 1,
+   "needs_review": false,
+   "input_tokens": 418,
+   "output_tokens": 182,
+   "latency_seconds": 0.01,
+   "error": null
+  },
+  {
+   "item_id": "cd-for-sql",
+   "model": "mock-b",
+   "ok": true,
+   "output": {
+    "title": "Minicode: CD for SQL databases",
+    "summary": "CD for SQL databases - a knowledge share / talk on DevOps, CI/CD & infrastructure as code, Data, analytics & Microsoft Fabric. No niin, aloitetaan. Puhun tänään tietokantojen jatkuvasta toimituksesta, eli CD:stä SQL-tietokannoille. Ongelma oli, että skeemamuutokset tehtiin käsin tuotantoon ja ympäristöt erosivat toisistaan.",
+    "presenter": "Timo Salonen",
+    "date": "2025-12-21",
+    "topics": [
+     "devops-iac",
+     "data-analytics"
+    ],
+    "content_type": "knowledge-share",
+    "level": 200,
+    "language": "fi-FI",
+    "keywords": [
+     "speaker",
+     "jotka",
+     "tehdään",
+     "aloitetaan",
+     "puhun",
+     "tänään",
+     "tietokantojen",
+     "jatkuvasta"
+    ],
+    "confidence": 0.8
+   },
+   "checks": {
+    "topic_precision": 1.0,
+    "topic_recall": 1.0,
+    "topic_f1": 1.0,
+    "content_type": 1.0,
+    "level": 1.0,
+    "presenter": 1.0,
+    "date_ok": true,
+    "title_clean": true,
+    "first_try_valid": 1.0,
+    "attempts": 1
+   },
+   "judge": {
+    "scores": {
+     "accuracy": 5,
+     "tag_relevance": 5,
+     "summary_quality": 4,
+     "title_quality": 4
+    },
+    "normalized": 0.875,
+    "judges": [
+     {
+      "judge": "mock-b",
+      "accuracy": 5,
+      "tag_relevance": 5,
+      "summary_quality": 4,
+      "title_quality": 4,
+      "rationale": "Deterministic mock judgement (heuristic, not a real model)."
+     }
+    ]
+   },
+   "composite": 0.9563,
+   "attempts": 1,
+   "needs_review": false,
+   "input_tokens": 300,
+   "output_tokens": 169,
+   "latency_seconds": 0.01,
+   "error": null
+  },
+  {
+   "item_id": "enterprise-ai-search",
+   "model": "mock-b",
+   "ok": true,
+   "output": {
+    "title": "Minicode: Enterprise AI Search: lessons learnt from Valmet PoC project",
+    "summary": "Enterprise AI Search: lessons learnt from Valmet PoC project - a case study, lessons learned & retrospectives on AI, GenAI & machine learning, Customer projects & project intros, Agile, product & ways of working. Hi all, I'll go through what we learned building an enterprise AI search proof of concept for Valmet. The goal was to let engineers ask questions over thousands of technical manuals in several languages. We used Azure AI Search with hybrid retrieval, so keyword search and vector search combined with semantic ranking on top.",
+    "presenter": "Sara Heikkinen",
+    "date": "2026-04-29",
+    "topics": [
+     "ai-genai",
+     "customer-projects",
+     "ways-of-working"
+    ],
+    "content_type": "case-study",
+    "level": 200,
+    "language": "en-US",
+    "keywords": [
+     "speaker",
+     "search",
+     "questions",
+     "chunks",
+     "embedding",
+     "every",
+     "through",
+     "learned"
+    ],
+    "confidence": 0.8
+   },
+   "checks": {
+    "topic_precision": 0.667,
+    "topic_recall": 1.0,
+    "topic_f1": 0.8,
+    "content_type": 1.0,
+    "level": 1.0,
+    "presenter": 1.0,
+    "date_ok": true,
+    "title_clean": true,
+    "first_try_valid": 1.0,
+    "attempts": 1
+   },
+   "judge": {
+    "scores": {
+     "accuracy": 5,
+     "tag_relevance": 5,
+     "summary_quality": 4,
+     "title_quality": 4
+    },
+    "normalized": 0.875,
+    "judges": [
+     {
+      "judge": "mock-b",
+      "accuracy": 5,
+      "tag_relevance": 5,
+      "summary_quality": 4,
+      "title_quality": 4,
+      "rationale": "Deterministic mock judgement (heuristic, not a real model)."
+     }
+    ]
+   },
+   "composite": 0.9062,
+   "attempts": 1,
+   "needs_review": false,
+   "input_tokens": 394,
+   "output_tokens": 234,
+   "latency_seconds": 0.01,
+   "error": null
+  },
+  {
+   "item_id": "purview-101",
+   "model": "mock-b",
+   "ok": true,
+   "output": {
+    "title": "Minicode: 101 to Microsoft Purview",
+    "summary": "101 to Microsoft Purview - a knowledge share / talk on Security, identity & compliance.",
+    "presenter": null,
+    "date": null,
+    "topics": [
+     "security-identity"
+    ],
+    "content_type": "knowledge-share",
+    "level": 200,
+    "language": "en-US",
+    "keywords": [],
+    "confidence": 0.8
+   },
+   "checks": {
+    "topic_precision": 1.0,
+    "topic_recall": 1.0,
+    "topic_f1": 1.0,
+    "content_type": 1.0,
+    "level": 1.0,
+    "presenter": null,
+    "date_ok": true,
+    "title_clean": true,
+    "first_try_valid": 1.0,
+    "attempts": 1
+   },
+   "judge": {
+    "scores": {
+     "accuracy": 3,
+     "tag_relevance": 4,
+     "summary_quality": 2,
+     "title_quality": 4
+    },
+    "normalized": 0.562,
+    "judges": [
+     {
+      "judge": "mock-b",
+      "accuracy": 3,
+      "tag_relevance": 4,
+      "summary_quality": 2,
+      "title_quality": 4,
+      "rationale": "Deterministic mock judgement (heuristic, not a real model)."
+     }
+    ]
+   },
+   "composite": 0.8297,
+   "attempts": 1,
+   "needs_review": false,
+   "input_tokens": 79,
+   "output_tokens": 80,
+   "latency_seconds": 0.0,
+   "error": null
+  },
+  {
+   "item_id": "axla-project-intro",
+   "model": "mock-b",
+   "ok": true,
+   "output": {
+    "title": "Project Intro: Axla Customer Portal",
+    "summary": "Axla Customer Portal - a project / customer introduction on Customer projects & project intros.",
+    "presenter": null,
+    "date": null,
+    "topics": [
+     "customer-projects"
+    ],
+    "content_type": "project-intro",
+    "level": 200,
+    "language": "en-US",
+    "keywords": [],
+    "confidence": 0.8
+   },
+   "checks": {
+    "topic_precision": 1.0,
+    "topic_recall": 1.0,
+    "topic_f1": 1.0,
+    "content_type": 1.0,
+    "level": 1.0,
+    "presenter": null,
+    "date_ok": true,
+    "title_clean": true,
+    "first_try_valid": 1.0,
+    "attempts": 1
+   },
+   "judge": {
+    "scores": {
+     "accuracy": 3,
+     "tag_relevance": 4,
+     "summary_quality": 3,
+     "title_quality": 4
+    },
+    "normalized": 0.625,
+    "judges": [
+     {
+      "judge": "mock-b",
+      "accuracy": 3,
+      "tag_relevance": 4,
+      "summary_quality": 3,
+      "title_quality": 4,
+      "rationale": "Deterministic mock judgement (heuristic, not a real model)."
+     }
+    ]
+   },
+   "composite": 0.8542,
+   "attempts": 1,
+   "needs_review": false,
+   "input_tokens": 82,
+   "output_tokens": 81,
+   "latency_seconds": 0.0,
+   "error": null
+  },
+  {
+   "item_id": "fabric-conference-news",
+   "model": "mock-b",
+   "ok": true,
+   "output": {
+    "title": "Minicode: Europe Fabric Conference news & Microsoft Fabric status update",
+    "summary": "Europe Fabric Conference news & Microsoft Fabric status update - a conference / event recap on Data, analytics & Microsoft Fabric, Conferences & community events.",
+    "presenter": null,
+    "date": null,
+    "topics": [
+     "data-analytics",
+     "conferences-events"
+    ],
+    "content_type": "conference-recap",
+    "level": 200,
+    "language": "en-US",
+    "keywords": [],
+    "confidence": 0.8
+   },
+   "checks": {
+    "topic_precision": 1.0,
+    "topic_recall": 1.0,
+    "topic_f1": 1.0,
+    "content_type": 1.0,
+    "level": 1.0,
+    "presenter": null,
+    "date_ok": true,
+    "title_clean": true,
+    "first_try_valid": 1.0,
+    "attempts": 1
+   },
+   "judge": {
+    "scores": {
+     "accuracy": 3,
+     "tag_relevance": 4,
+     "summary_quality": 4,
+     "title_quality": 4
+    },
+    "normalized": 0.688,
+    "judges": [
+     {
+      "judge": "mock-b",
+      "accuracy": 3,
+      "tag_relevance": 4,
+      "summary_quality": 4,
+      "title_quality": 4,
+      "rationale": "Deterministic mock judgement (heuristic, not a real model)."
+     }
+    ]
+   },
+   "composite": 0.8787,
+   "attempts": 1,
+   "needs_review": false,
+   "input_tokens": 98,
+   "output_tokens": 113,
+   "latency_seconds": 0.0,
+   "error": null
+  },
+  {
+   "item_id": "fluentassertions",
+   "model": "mock-b",
+   "ok": true,
+   "output": {
+    "title": "Minicode: FluentAssertions",
+    "summary": "FluentAssertions - a knowledge share / talk on Testing & quality assurance.",
+    "presenter": null,
+    "date": null,
+    "topics": [
+     "testing-qa"
+    ],
+    "content_type": "knowledge-share",
+    "level": 200,
+    "language": "en-US",
+    "keywords": [],
+    "confidence": 0.8
+   },
+   "checks": {
+    "topic_precision": 1.0,
+    "topic_recall": 1.0,
+    "topic_f1": 1.0,
+    "content_type": 1.0,
+    "level": 1.0,
+    "presenter": null,
+    "date_ok": true,
+    "title_clean": true,
+    "first_try_valid": 1.0,
+    "attempts": 1
+   },
+   "judge": {
+    "scores": {
+     "accuracy": 3,
+     "tag_relevance": 4,
+     "summary_quality": 2,
+     "title_quality": 4
+    },
+    "normalized": 0.562,
+    "judges": [
+     {
+      "judge": "mock-b",
+      "accuracy": 3,
+      "tag_relevance": 4,
+      "summary_quality": 2,
+      "title_quality": 4,
+      "rationale": "Deterministic mock judgement (heuristic, not a real model)."
+     }
+    ]
+   },
+   "composite": 0.8297,
+   "attempts": 1,
+   "needs_review": false,
+   "input_tokens": 78,
+   "output_tokens": 73,
+   "latency_seconds": 0.0,
+   "error": null
+  },
+  {
+   "item_id": "subscriptions-management-groups",
+   "model": "mock-b",
+   "ok": true,
+   "output": {
+    "title": "Minicode: Azure Subscriptions and Management groups",
+    "summary": "Azure Subscriptions and Management groups - a knowledge share / talk on Azure platform & cloud infrastructure.",
+    "presenter": null,
+    "date": null,
+    "topics": [
+     "azure-platform"
+    ],
+    "content_type": "knowledge-share",
+    "level": 200,
+    "language": "en-US",
+    "keywords": [],
+    "confidence": 0.8
+   },
+   "checks": {
+    "topic_precision": 1.0,
+    "topic_recall": 1.0,
+    "topic_f1": 1.0,
+    "content_type": 1.0,
+    "level": 1.0,
+    "presenter": null,
+    "date_ok": true,
+    "title_clean": true,
+    "first_try_valid": 1.0,
+    "attempts": 1
+   },
+   "judge": {
+    "scores": {
+     "accuracy": 3,
+     "tag_relevance": 4,
+     "summary_quality": 3,
+     "title_quality": 4
+    },
+    "normalized": 0.625,
+    "judges": [
+     {
+      "judge": "mock-b",
+      "accuracy": 3,
+      "tag_relevance": 4,
+      "summary_quality": 3,
+      "title_quality": 4,
+      "rationale": "Deterministic mock judgement (heuristic, not a real model)."
+     }
+    ]
+   },
+   "composite": 0.8542,
+   "attempts": 1,
+   "needs_review": false,
+   "input_tokens": 90,
+   "output_tokens": 89,
+   "latency_seconds": 0.0,
+   "error": null
+  },
+  {
+   "item_id": "docker-containers",
+   "model": "mock-b",
+   "ok": true,
+   "output": {
+    "title": "Minicode: How I use (docker) containers in development",
+    "summary": "How I use (docker) containers in development - a knowledge share / talk on DevOps, CI/CD & infrastructure as code, Agile, product & ways of working.",
+    "presenter": null,
+    "date": null,
+    "topics": [
+     "devops-iac",
+     "ways-of-working"
+    ],
+    "content_type": "knowledge-share",
+    "level": 200,
+    "language": "en-US",
+    "keywords": [],
+    "confidence": 0.8
+   },
+   "checks": {
+    "topic_precision": 0.5,
+    "topic_recall": 0.0,
+    "topic_f1": 0.0,
+    "content_type": 1.0,
+    "level": 1.0,
+    "presenter": null,
+    "date_ok": true,
+    "title_clean": true,
+    "first_try_valid": 1.0,
+    "attempts": 1
+   },
+   "judge": {
+    "scores": {
+     "accuracy": 3,
+     "tag_relevance": 4,
+     "summary_quality": 3,
+     "title_quality": 4
+    },
+    "normalized": 0.625,
+    "judges": [
+     {
+      "judge": "mock-b",
+      "accuracy": 3,
+      "tag_relevance": 4,
+      "summary_quality": 3,
+      "title_quality": 4,
+      "rationale": "Deterministic mock judgement (heuristic, not a real model)."
+     }
+    ]
+   },
+   "composite": 0.5764,
+   "attempts": 1,
+   "needs_review": false,
+   "input_tokens": 89,
+   "output_tokens": 103,
+   "latency_seconds": 0.0,
+   "error": null
+  },
+  {
+   "item_id": "retrospectives",
+   "model": "mock-b",
+   "ok": true,
+   "output": {
+    "title": "Minicode: How retrospectives can help your team",
+    "summary": "How retrospectives can help your team - a knowledge share / talk on Agile, product & ways of working.",
+    "presenter": null,
+    "date": null,
+    "topics": [
+     "ways-of-working"
+    ],
+    "content_type": "knowledge-share",
+    "level": 200,
+    "language": "en-US",
+    "keywords": [],
+    "confidence": 0.8
+   },
+   "checks": {
+    "topic_precision": 1.0,
+    "topic_recall": 1.0,
+    "topic_f1": 1.0,
+    "content_type": 1.0,
+    "level": 1.0,
+    "presenter": null,
+    "date_ok": true,
+    "title_clean": true,
+    "first_try_valid": 1.0,
+    "attempts": 1
+   },
+   "judge": {
+    "scores": {
+     "accuracy": 3,
+     "tag_relevance": 4,
+     "summary_quality": 3,
+     "title_quality": 4
+    },
+    "normalized": 0.625,
+    "judges": [
+     {
+      "judge": "mock-b",
+      "accuracy": 3,
+      "tag_relevance": 4,
+      "summary_quality": 3,
+      "title_quality": 4,
+      "rationale": "Deterministic mock judgement (heuristic, not a real model)."
+     }
+    ]
+   },
+   "composite": 0.8542,
+   "attempts": 1,
+   "needs_review": false,
+   "input_tokens": 88,
+   "output_tokens": 86,
+   "latency_seconds": 0.0,
+   "error": null
+  },
+  {
+   "item_id": "adhd-worklife",
+   "model": "mock-b",
+   "ok": true,
+   "output": {
+    "title": "Minicode: ADHD & (work)life",
+    "summary": "ADHD & (work)life - a knowledge share / talk on People, HR & culture.",
+    "presenter": null,
+    "date": null,
+    "topics": [
+     "people-culture"
+    ],
+    "content_type": "knowledge-share",
+    "level": 200,
+    "language": "en-US",
+    "keywords": [],
+    "confidence": 0.8
+   },
+   "checks": {
+    "topic_precision": 1.0,
+    "topic_recall": 1.0,
+    "topic_f1": 1.0,
+    "content_type": 1.0,
+    "level": 1.0,
+    "presenter": null,
+    "date_ok": true,
+    "title_clean": true,
+    "first_try_valid": 1.0,
+    "attempts": 1
+   },
+   "judge": {
+    "scores": {
+     "accuracy": 3,
+     "tag_relevance": 4,
+     "summary_quality": 2,
+     "title_quality": 4
+    },
+    "normalized": 0.562,
+    "judges": [
+     {
+      "judge": "mock-b",
+      "accuracy": 3,
+      "tag_relevance": 4,
+      "summary_quality": 2,
+      "title_quality": 4,
+      "rationale": "Deterministic mock judgement (heuristic, not a real model)."
+     }
+    ]
+   },
+   "composite": 0.8297,
+   "attempts": 1,
+   "needs_review": false,
+   "input_tokens": 76,
+   "output_tokens": 73,
+   "latency_seconds": 0.0,
+   "error": null
+  },
+  {
+   "item_id": "location-data-lessons",
+   "model": "mock-b",
+   "ok": true,
+   "output": {
+    "title": "Minicode: Location data and map services lessons learned",
+    "summary": "Location data and map services lessons learned - a case study, lessons learned & retrospectives on Data, analytics & Microsoft Fabric, IoT, location & digital twins, Agile, product & ways of working.",
+    "presenter": null,
+    "date": null,
+    "topics": [
+     "data-analytics",
+     "iot-location",
+     "ways-of-working"
+    ],
+    "content_type": "case-study",
+    "level": 200,
+    "language": "en-US",
+    "keywords": [],
+    "confidence": 0.8
+   },
+   "checks": {
+    "topic_precision": 0.333,
+    "topic_recall": 1.0,
+    "topic_f1": 0.5,
+    "content_type": 1.0,
+    "level": 1.0,
+    "presenter": null,
+    "date_ok": true,
+    "title_clean": true,
+    "first_try_valid": 1.0,
+    "attempts": 1
+   },
+   "judge": {
+    "scores": {
+     "accuracy": 3,
+     "tag_relevance": 4,
+     "summary_quality": 4,
+     "title_quality": 4
+    },
+    "normalized": 0.688,
+    "judges": [
+     {
+      "judge": "mock-b",
+      "accuracy": 3,
+      "tag_relevance": 4,
+      "summary_quality": 4,
+      "title_quality": 4,
+      "rationale": "Deterministic mock judgement (heuristic, not a real model)."
+     }
+    ]
+   },
+   "composite": 0.7398,
+   "attempts": 1,
+   "needs_review": false,
+   "input_tokens": 93,
+   "output_tokens": 120,
+   "latency_seconds": 0.0,
+   "error": null
+  },
+  {
+   "item_id": "user-research-for-all",
+   "model": "mock-b",
+   "ok": true,
+   "output": {
+    "title": "Minicode: User Research for All",
+    "summary": "User Research for All - a knowledge share / talk on UX, design & accessibility.",
+    "presenter": null,
+    "date": null,
+    "topics": [
+     "ux-design"
+    ],
+    "content_type": "knowledge-share",
+    "level": 200,
+    "language": "en-US",
+    "keywords": [],
+    "confidence": 0.8
+   },
+   "checks": {
+    "topic_precision": 1.0,
+    "topic_recall": 1.0,
+    "topic_f1": 1.0,
+    "content_type": 1.0,
+    "level": 1.0,
+    "presenter": null,
+    "date_ok": true,
+    "title_clean": true,
+    "first_try_valid": 1.0,
+    "attempts": 1
+   },
+   "judge": {
+    "scores": {
+     "accuracy": 3,
+     "tag_relevance": 4,
+     "summary_quality": 2,
+     "title_quality": 4
+    },
+    "normalized": 0.562,
+    "judges": [
+     {
+      "judge": "mock-b",
+      "accuracy": 3,
+      "tag_relevance": 4,
+      "summary_quality": 2,
+      "title_quality": 4,
+      "rationale": "Deterministic mock judgement (heuristic, not a real model)."
+     }
+    ]
+   },
+   "composite": 0.8297,
+   "attempts": 1,
+   "needs_review": false,
+   "input_tokens": 80,
+   "output_tokens": 75,
+   "latency_seconds": 0.0,
+   "error": null
+  },
+  {
+   "item_id": "ghas-azure-devops",
+   "model": "mock-b",
+   "ok": true,
+   "output": {
+    "title": "Minicode: GitHub Advanced Security for Azure DevOps",
+    "summary": "GitHub Advanced Security for Azure DevOps - a knowledge share / talk on Azure platform & cloud infrastructure, DevOps, CI/CD & infrastructure as code, Security, identity & compliance.",
+    "presenter": null,
+    "date": null,
+    "topics": [
+     "azure-platform",
+     "devops-iac",
+     "security-identity"
+    ],
+    "content_type": "knowledge-share",
+    "level": 200,
+    "language": "en-US",
+    "keywords": [],
+    "confidence": 0.8
+   },
+   "checks": {
+    "topic_precision": 0.667,
+    "topic_recall": 1.0,
+    "topic_f1": 0.8,
+    "content_type": 1.0,
+    "level": 1.0,
+    "presenter": null,
+    "date_ok": true,
+    "title_clean": true,
+    "first_try_valid": 1.0,
+    "attempts": 1
+   },
+   "judge": {
+    "scores": {
+     "accuracy": 3,
+     "tag_relevance": 4,
+     "summary_quality": 4,
+     "title_quality": 4
+    },
+    "normalized": 0.688,
+    "judges": [
+     {
+      "judge": "mock-b",
+      "accuracy": 3,
+      "tag_relevance": 4,
+      "summary_quality": 4,
+      "title_quality": 4,
+      "rationale": "Deterministic mock judgement (heuristic, not a real model)."
+     }
+    ]
+   },
+   "composite": 0.8231,
+   "attempts": 1,
+   "needs_review": false,
+   "input_tokens": 90,
+   "output_tokens": 116,
+   "latency_seconds": 0.0,
+   "error": null
+  },
+  {
+   "item_id": "apim-appgw",
+   "model": "mock-b",
+   "ok": true,
+   "output": {
+    "title": "Minicode: Jurassic truths about apim and appgw",
+    "summary": "Jurassic truths about apim and appgw - a knowledge share / talk on Azure platform & cloud infrastructure, Integration, messaging & APIs.",
+    "presenter": null,
+    "date": null,
+    "topics": [
+     "azure-platform",
+     "integration-api"
+    ],
+    "content_type": "knowledge-share",
+    "level": 200,
+    "language": "en-US",
+    "keywords": [],
+    "confidence": 0.8
+   },
+   "checks": {
+    "topic_precision": 1.0,
+    "topic_recall": 1.0,
+    "topic_f1": 1.0,
+    "content_type": 1.0,
+    "level": 1.0,
+    "presenter": null,
+    "date_ok": true,
+    "title_clean": true,
+    "first_try_valid": 1.0,
+    "attempts": 1
+   },
+   "judge": {
+    "scores": {
+     "accuracy": 3,
+     "tag_relevance": 4,
+     "summary_quality": 3,
+     "title_quality": 4
+    },
+    "normalized": 0.625,
+    "judges": [
+     {
+      "judge": "mock-b",
+      "accuracy": 3,
+      "tag_relevance": 4,
+      "summary_quality": 3,
+      "title_quality": 4,
+      "rationale": "Deterministic mock judgement (heuristic, not a real model)."
+     }
+    ]
+   },
+   "composite": 0.8542,
+   "attempts": 1,
+   "needs_review": false,
+   "input_tokens": 88,
+   "output_tokens": 99,
+   "latency_seconds": 0.0,
+   "error": null
+  },
+  {
+   "item_id": "ai-series-jani",
+   "model": "mock-b",
+   "ok": true,
+   "output": {
+    "title": "AI Series: Join Jani as he presents how he uses AI tools in his daily work",
+    "summary": "Join Jani as he presents how he uses AI tools in his daily work - a knowledge share / talk on AI, GenAI & machine learning, Agile, product & ways of working.",
+    "presenter": "Jani",
+    "date": null,
+    "topics": [
+     "ai-genai",
+     "ways-of-working"
+    ],
+    "content_type": "knowledge-share",
+    "level": 200,
+    "language": "en-US",
+    "keywords": [],
+    "confidence": 0.8
+   },
+   "checks": {
+    "topic_precision": 1.0,
+    "topic_recall": 1.0,
+    "topic_f1": 1.0,
+    "content_type": 1.0,
+    "level": 1.0,
+    "presenter": 1.0,
+    "date_ok": true,
+    "title_clean": true,
+    "first_try_valid": 1.0,
+    "attempts": 1
+   },
+   "judge": {
+    "scores": {
+     "accuracy": 4,
+     "tag_relevance": 4,
+     "summary_quality": 3,
+     "title_quality": 4
+    },
+    "normalized": 0.688,
+    "judges": [
+     {
+      "judge": "mock-b",
+      "accuracy": 4,
+      "tag_relevance": 4,
+      "summary_quality": 3,
+      "title_quality": 4,
+      "rationale": "Deterministic mock judgement (heuristic, not a real model)."
+     }
+    ]
+   },
+   "composite": 0.8908,
+   "attempts": 1,
+   "needs_review": false,
+   "input_tokens": 102,
+   "output_tokens": 110,
+   "latency_seconds": 0.0,
+   "error": null
+  }
+ ],
+ "pick": "mock-b",
+ "pick_reason": "composite scores within 0.03 (0.007) and no clear cost/latency difference; provisional pick on composite - decide on cost, data residency and the human tag review",
+ "mock": true
+}
