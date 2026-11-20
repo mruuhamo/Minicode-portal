@@ -11,7 +11,7 @@ See [docs/architecture.md](docs/architecture.md) for the diagram and component m
 | 1 | Discovery & setup: inventory, taxonomy, naming convention, environments, CI/CD | ✅ code done - human tasks in [docs/week1-checklist.md](docs/week1-checklist.md) |
 | 2 | Ingestion & transcripts: Graph backfill + delta, Speech batch transcription, VTT parsing, chunking | ✅ code done against mocks - see [docs/week2-ingestion.md](docs/week2-ingestion.md) |
 | 3 | Enrichment & search: LLM enrichment, model comparison, embeddings, AI Search index, Search API (Entra) | ✅ code done against mocks - see [docs/week3-enrichment-search.md](docs/week3-enrichment-search.md) |
-| 4 | React Learning section | - |
+| 4 | Learning section: React listing/search/filters, detail page with video + jump-to-timestamp, MSAL, embeddable library | ✅ MVP demo against mocks - see [docs/week4-frontend.md](docs/week4-frontend.md) |
 
 No real Azure / SharePoint access yet. The real Graph and Speech clients are implemented, but they run against an in-process **mock cloud** built from sample data (`MINICODE_SOURCE=mock`). Switching to the real services is configuration only.
 
@@ -37,7 +37,9 @@ data/
   taxonomy/taxonomy.yaml  tag taxonomy (source of truth)
 docs/               inventory report, taxonomy, naming convention, architecture, environments, checklist
 infra/              Bicep: main.bicep (subscription scope), modules/, env/{dev,prod}.bicepparam
-frontend/           React + TypeScript Learning section (week 4)
+frontend/           Vite + React + TS Learning section: standalone app + embeddable library (week 4)
+  src/                LearningSection, pages, components, typed API client, MSAL auth, video players
+  public/demo/        demo video for the local mock-data player
 .github/workflows/  ci.yml, infra.yml, deploy.yml
 ```
 
@@ -55,6 +57,15 @@ cd backend
 ..\.venv\Scripts\python -m minicode.enrichment run          # enrich + index (mock LLM, local search)
 $env:AUTH_MODE='dev'; ..\.venv\Scripts\python -m minicode.api serve  # Search API on :7071, dev auth bypass
 ..\.venv\Scripts\python -m minicode.evaluation              # model comparison -> docs/model-comparison.md
+```
+
+Frontend (Node 24; second terminal, with the API above running):
+
+```powershell
+cd frontend
+npm ci
+$env:VITE_PLAYER='html5'; $env:VITE_DEMO_VIDEO_URL='/demo/minicode-demo.mp4'; npm run dev   # http://localhost:5173
+npm run lint; npm run typecheck; npm test; npm run build
 ```
 
 Infra (needs Azure CLI with Bicep):
@@ -80,3 +91,7 @@ az deployment sub what-if -l swedencentral -f infra\main.bicep -p infra\env\dev.
 
 - [Enrichment & search](docs/week3-enrichment-search.md): enrichment, index design, Search API + auth, local end-to-end demo, switching to real services, open questions
 - [Model comparison report](docs/model-comparison.md) (mock run until keys exist) + [tag review sheet](docs/eval/tag-review.csv)
+
+## Week 4 deliverables
+
+- [Learning section](docs/week4-frontend.md): local full-stack demo, screenshots, portal integration contract, video player / Stream embed, accessibility, open questions

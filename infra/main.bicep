@@ -54,6 +54,9 @@ param aiDeployments array?
 @description('Backend API app registration client ID (Entra ID). Leave empty until the app reg exists.')
 param apiClientId string = ''
 
+@description('Browser origins allowed to call the Search API (portal / Learning section host), e.g. https://portal.contoso.com.')
+param corsAllowedOrigins array = []
+
 @description('SharePoint site ID of the minicode Teams channel (Graph). Leave empty until Sites.Selected is granted.')
 param minicodeSiteId string = ''
 
@@ -165,6 +168,7 @@ module functionApp 'modules/functionapp.bicep' = {
     deploymentContainerUrl: storage.outputs.deploymentContainerUrl
     appInsightsConnectionString: monitoring.outputs.appInsightsConnectionString
     apiClientId: apiClientId
+    corsAllowedOrigins: corsAllowedOrigins
     appSettings: {
       MINICODE_ENVIRONMENT: environmentName
       MINICODE_SOURCE: empty(minicodeSiteId) ? 'mock' : 'graph'

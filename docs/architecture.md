@@ -58,7 +58,7 @@ flowchart LR
 | Transcript parse/chunk, LLM enrichment, embeddings | `ai` | 3 |
 | Cosmos DB curated metadata, AI Search index | `cosmos`, `search` | 3 |
 | Search API + admin endpoints (Entra JWT validation in code) | `functionapp` | 3 |
-| React Learning section (MSAL) | - (portal) | 4 |
+| React Learning section (MSAL): standalone app + embeddable library, `frontend/` - see [week4-frontend.md](week4-frontend.md) | - (hosted by the portal; API CORS via `corsAllowedOrigins`) | 4 |
 
 ## Key decisions (week 1)
 

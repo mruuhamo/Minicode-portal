@@ -18,6 +18,9 @@ param instanceMemoryMB int = 2048
 @description('Entra ID app registration (backend API) client ID used for Easy Auth token validation. Empty = disabled.')
 param apiClientId string = ''
 
+@description('Browser origins allowed to call the API (portal / Learning section host).')
+param corsAllowedOrigins array = []
+
 resource plan 'Microsoft.Web/serverfarms@2024-04-01' = {
   name: 'asp-${namePrefix}'
   location: location
@@ -54,7 +57,7 @@ resource site 'Microsoft.Web/sites@2024-04-01' = {
       minTlsVersion: '1.2'
       ftpsState: 'Disabled'
       cors: {
-        allowedOrigins: []
+        allowedOrigins: corsAllowedOrigins
       }
     }
     functionAppConfig: {

@@ -8,6 +8,7 @@ param tags = {
   owner: 'portal-team'
 }
 param apiClientId = '' // TODO: backend API app registration (prod)
+param corsAllowedOrigins = [] // TODO: portal production origin(s)
 param minicodeSiteId = '' // TODO: after Sites.Selected grant
 param monthlyBudget = 300
 param budgetContactEmails = [] // TODO: add owner e-mail(s) to enable the budget
