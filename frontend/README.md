@@ -1,5 +1,15 @@
-# Frontend (week 4)
+# Learning section (frontend)
 
-React + TypeScript Learning section for the company portal, using MSAL to call the Search API (`api://minicode-api-<env>/Learning.Read`).
+Vite + React 19 + TypeScript. It builds two outputs:
 
-Not started yet - integration approach (standalone app vs. module inside the portal) is decided in the portal team meeting, see [../docs/week1-checklist.md](../docs/week1-checklist.md).
+- A **standalone app** in `dist/app`.
+- An **embeddable library** `@minicode/learning-section` in `dist/lib`, which exports `<LearningSection basePath apiBaseUrl msalInstance? />`.
+
+See [../docs/week4-frontend.md](../docs/week4-frontend.md) for the local full-stack demo, the env settings, the portal integration contract and the open questions.
+
+```powershell
+npm ci
+npm run dev          # http://localhost:5173, /api proxied to the backend on :7071 (AUTH_MODE=dev)
+npm run lint; npm run typecheck; npm test
+npm run build        # dist/app + dist/lib
+```
