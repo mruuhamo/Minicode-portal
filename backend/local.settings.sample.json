@@ -19,6 +19,27 @@
     "COSMOS_ENDPOINT": "",
     "SEARCH_ENDPOINT": "",
     "AI_SERVICES_ENDPOINT": "",
-    "KEY_VAULT_URI": ""
+    "KEY_VAULT_URI": "",
+    "MINICODE_ENVIRONMENT": "local",
+    "MINICODE_DATA_DIR": "../out",
+    "ENRICHMENT_ENABLED": "true",
+    "LLM_PROVIDER": "mock",
+    "AZURE_OPENAI_CHAT_DEPLOYMENT": "gpt-4.1-mini",
+    "CLAUDE_FOUNDRY_ENDPOINT": "",
+    "CLAUDE_DEPLOYMENT": "claude-sonnet-4-6",
+    "SUMMARY_LANGUAGE": "English",
+    "EMBEDDINGS_PROVIDER": "hash",
+    "AZURE_OPENAI_EMBEDDING_DEPLOYMENT": "text-embedding-3-large",
+    "EMBEDDING_DIMENSIONS": "1024",
+    "MINICODE_REPOSITORY": "local",
+    "COSMOS_DATABASE": "minicode",
+    "COSMOS_CONTAINER": "recordings",
+    "COSMOS_AUDIT_CONTAINER": "audit",
+    "SEARCH_BACKEND": "local",
+    "SEARCH_INDEX_PREFIX": "minicode",
+    "SEMANTIC_RANKER": "false",
+    "AUTH_MODE": "dev",
+    "AUTH_TENANT_ID": "",
+    "API_CLIENT_ID": ""
   }
 }

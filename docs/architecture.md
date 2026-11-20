@@ -57,7 +57,7 @@ flowchart LR
 | Azure AI Speech for recordings without transcript | `ai` | 2-3 |
 | Transcript parse/chunk, LLM enrichment, embeddings | `ai` | 3 |
 | Cosmos DB curated metadata, AI Search index | `cosmos`, `search` | 3 |
-| Search API + admin endpoints | `functionapp` (Easy Auth) | 4 |
+| Search API + admin endpoints (Entra JWT validation in code) | `functionapp` | 3 |
 | React Learning section (MSAL) | - (portal) | 4 |
 
 ## Key decisions (week 1)
@@ -67,3 +67,15 @@ flowchart LR
 - **Cosmos DB serverless** over Azure SQL: document-shaped metadata, tiny volume, pay-per-request. Revisit if the portal team prefers SQL.
 - **Identity-only access**: shared keys disabled on Storage, Cosmos, AI Services; the Function App uses its managed identity with data-plane RBAC.
 - **Visibility**: all minicodes are visible to all employees, so the API only checks for a valid signed-in token (no per-meeting ACL).
+
+## Enrichment and search flow (week 3)
+
+After ingestion, the hourly timer (or `POST /api/manage/enrich`) runs the following steps:
+
+1. Build an input from the recording metadata and the transcript chunks.
+2. Call the LLM adapter (Azure OpenAI or Claude on Foundry) with a strict JSON schema, then validate the output against the schema and the taxonomy, retrying up to 3 times.
+3. Store the result in Cosmos DB. Admin overrides win.
+4. Embed the chunks and push them to two AI Search indexes (recordings, and chunks with parent fields).
+5. Serve hybrid search with facets and chunk timestamps through the Search API.
+
+Details are in [week3-enrichment-search.md](week3-enrichment-search.md).

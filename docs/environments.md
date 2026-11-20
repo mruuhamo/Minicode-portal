@@ -21,14 +21,14 @@ Region defaults to `swedencentral` (AI Services, Flex Consumption and AI Search 
 | `monitoring` | Log Analytics workspace, Application Insights (Entra auth only) |
 | `keyvault` | Key Vault (RBAC mode, audit logs to Log Analytics) |
 | `storage` | Storage account (no shared keys) + containers `transcripts`, `artifacts`, `inventory`, `app-package` |
-| `cosmos` | Cosmos DB serverless, db `minicode`, container `recordings` (pk `/sourceId`), local auth disabled |
+| `cosmos` | Cosmos DB serverless, db `minicode`, containers `recordings` (pk `/sourceId`) and `audit` (pk `/recordingId`, admin corrections), local auth disabled |
 | `search` | Azure AI Search (`basic`, semantic ranker free tier, system identity) |
 | `ai` | Azure AI Services (Foundry) account: `text-embedding-3-large`, `gpt-4.1-mini`; Speech via same account |
 | `functionapp` | Flex Consumption plan + Python 3.12 Function App, system identity, optional Easy Auth (Entra) |
 | `rbac` | Function MI → Storage blob/queue/table, Key Vault secrets user, Search index + service contributor, OpenAI + Speech user, Cosmos data contributor. Search MI → OpenAI user, blob reader |
 | `budget` | Monthly consumption budget (only when `budgetContactEmails` is set) |
 
-**Claude via Microsoft Foundry** is not in Bicep: Anthropic models are deployed from the Foundry model catalog (Marketplace subscription + terms acceptance) into the same AI Services account. Do it once per environment in the portal and record the deployment name in the app settings (week 3).
+**Claude via Microsoft Foundry** is not in Bicep: Anthropic models are deployed from the Foundry model catalog (Marketplace subscription + terms acceptance) into the same AI Services account. Do it once per environment in the portal and set the `claudeFoundryEndpoint` / `claudeDeployment` parameters (week 3).
 
 ### Validate / deploy locally
 
@@ -67,10 +67,12 @@ az deployment sub create  -l swedencentral -f infra/main.bicep -p infra/env/dev.
 
 | App | Purpose | Settings |
 |---|---|---|
-| `minicode-api-<env>` | Backend API audience | Expose API `api://<clientId>`, scope `Learning.Read`; client id goes to `apiClientId` param (enables Easy Auth on the Function App) |
+| `minicode-api-<env>` | Backend API audience | Expose API `api://<clientId>`, scope `Learning.Read`; app role `Learning.Admin` (assign to curators); client id goes to `apiClientId` param (`API_CLIENT_ID` for the code's JWT validation; also enables Easy Auth). **Until it is set, the API returns 500 in Azure** because `AUTH_MODE=entra` |
 | `minicode-spa-<env>` | React Learning section (MSAL) | SPA redirect URIs of the portal; delegated permission `Learning.Read` on the API app; admin consent |
 | `minicode-ingest-<env>` | Graph access for ingestion | **Application** permission `Sites.Selected` (admin consent) + per-site `read` grant; credential = certificate in Key Vault, or federated credential to the Function App's managed identity |
 
 See [week1-checklist.md](week1-checklist.md) for the Sites.Selected request text.
 
 Ingestion settings (`MINICODE_*`, `SPEECH_*`, `BACKFILL_*`, `INGESTION_ENABLED`) are listed in [week2-ingestion.md](week2-ingestion.md#settings). The Bicep parameters for them are `minicodeSiteId`, `minicodeFolderPath`, `ingestionSchedule` and `speechLocale`.
+
+Week 3 parameters: `semanticSearch` (disabled/free/standard), `searchIndexPrefix`, `llmProvider`, `chatDeployment`, `embeddingDeployment`, `embeddingDimensions`, `claudeFoundryEndpoint`, `claudeDeployment`, `summaryLanguage`. They map to the app settings listed in [week3-enrichment-search.md](week3-enrichment-search.md#switching-to-real-services).

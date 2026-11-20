@@ -86,7 +86,7 @@ resource settings 'Microsoft.Web/sites/config@2024-04-01' = {
 }
 
 // Easy Auth: require a valid Entra ID token for the API audience; /api/health stays open
-// because unauthenticated requests are allowed through and the code checks claims (week 4).
+// because unauthenticated requests are allowed through; the code validates the JWT itself (minicode/api/auth.py).
 resource auth 'Microsoft.Web/sites/config@2024-04-01' = if (!empty(apiClientId)) {
   parent: site
   name: 'authsettingsV2'

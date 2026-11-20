@@ -10,8 +10,8 @@ See [docs/architecture.md](docs/architecture.md) for the diagram and component m
 |---|---|---|
 | 1 | Discovery & setup: inventory, taxonomy, naming convention, environments, CI/CD | ✅ code done - human tasks in [docs/week1-checklist.md](docs/week1-checklist.md) |
 | 2 | Ingestion & transcripts: Graph backfill + delta, Speech batch transcription, VTT parsing, chunking | ✅ code done against mocks - see [docs/week2-ingestion.md](docs/week2-ingestion.md) |
-| 3 | LLM enrichment, embeddings, search index | - |
-| 4 | Search API + React Learning section | - |
+| 3 | Enrichment & search: LLM enrichment, model comparison, embeddings, AI Search index, Search API (Entra) | ✅ code done against mocks - see [docs/week3-enrichment-search.md](docs/week3-enrichment-search.md) |
+| 4 | React Learning section | - |
 
 No real Azure / SharePoint access yet. The real Graph and Speech clients are implemented, but they run against an in-process **mock cloud** built from sample data (`MINICODE_SOURCE=mock`). Switching to the real services is configuration only.
 
@@ -25,9 +25,13 @@ backend/            Python Azure Functions app + minicode package
     inventory/        inventory pipeline, RecordingSource adapters (mock, Graph)
     ingestion/        Graph + Speech clients, VTT parser, chunker, pipeline, state, mock cloud, CLI
     samples/          sample recordings/transcripts for the mock cloud
+    enrichment/       LLM adapters (Azure OpenAI, Claude/Foundry, mock), schema validation, embeddings, catalogue repo, CLI
+    search/           index schema, Azure AI Search + local hybrid backend, indexer
+    api/              Search API routes, Entra JWT auth, local dev server
+    evaluation/       Claude vs Azure OpenAI comparison harness (LLM-as-judge + deterministic checks)
     storage.py        blob storage abstraction (local filesystem, Azure Blob)
   tests/            pytest
-  function_app.py   Functions entry point (/api/health, /api/admin/ingest, hourly ingest timer)
+  function_app.py   Functions entry point (/api/minicodes, /api/search, /api/manage/*, hourly ingest+enrich timer)
 data/
   recordings/titles.txt   existing minicode titles (227, raw export)
   taxonomy/taxonomy.yaml  tag taxonomy (source of truth)
@@ -48,6 +52,9 @@ cd backend
 ..\.venv\Scripts\python -m minicode.inventory # regenerate docs/inventory-report.md + docs/inventory.csv
 ..\.venv\Scripts\python -m minicode.ingestion backfill --wait  # ingest mock recordings -> ..\out\blob
 ..\.venv\Scripts\python -m minicode.ingestion status
+..\.venv\Scripts\python -m minicode.enrichment run          # enrich + index (mock LLM, local search)
+$env:AUTH_MODE='dev'; ..\.venv\Scripts\python -m minicode.api serve  # Search API on :7071, dev auth bypass
+..\.venv\Scripts\python -m minicode.evaluation              # model comparison -> docs/model-comparison.md
 ```
 
 Infra (needs Azure CLI with Bicep):
@@ -68,3 +75,8 @@ az deployment sub what-if -l swedencentral -f infra\main.bicep -p infra\env\dev.
 ## Week 2 deliverables
 
 - [Ingestion & transcripts](docs/week2-ingestion.md): design, blob layout, state machine, local run, switching to real Graph/Speech, open questions
+
+## Week 3 deliverables
+
+- [Enrichment & search](docs/week3-enrichment-search.md): enrichment, index design, Search API + auth, local end-to-end demo, switching to real services, open questions
+- [Model comparison report](docs/model-comparison.md) (mock run until keys exist) + [tag review sheet](docs/eval/tag-review.csv)

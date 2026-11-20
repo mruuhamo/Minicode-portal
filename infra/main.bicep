@@ -18,6 +18,36 @@ param tags object = {}
 @description('Search SKU: basic for dev, standard if prod needs more storage/replicas.')
 param searchSku string = 'basic'
 
+@description('Semantic ranker plan (free = 1000 queries/month). Ignored for the free search SKU.')
+@allowed([
+  'disabled'
+  'free'
+  'standard'
+])
+param semanticSearch string = 'free'
+
+@description('Prefix of the AI Search indexes (<prefix>-recordings, <prefix>-chunks).')
+param searchIndexPrefix string = 'minicode'
+
+@description('Enrichment LLM: azure-openai[:deployment] or claude-foundry[:deployment] - pick from docs/model-comparison.md.')
+param llmProvider string = 'azure-openai'
+
+@description('Azure OpenAI chat deployment used for enrichment (must exist in aiDeployments).')
+param chatDeployment string = 'gpt-4.1-mini'
+
+@description('Embedding deployment and dimensions; dimensions are baked into the chunk index vector field.')
+param embeddingDeployment string = 'text-embedding-3-large'
+
+param embeddingDimensions int = 1024
+
+@description('Foundry resource endpoint hosting the Claude deployment (https://<res>.services.ai.azure.com). Empty = AI Services endpoint.')
+param claudeFoundryEndpoint string = ''
+
+param claudeDeployment string = 'claude-sonnet-4-6'
+
+@description('Language of the generated summaries.')
+param summaryLanguage string = 'English'
+
 @description('Azure OpenAI model deployments (see modules/ai.bicep).')
 param aiDeployments array?
 
@@ -109,6 +139,7 @@ module search 'modules/search.bicep' = {
     name: 'srch-${namePrefix}-${suffix}'
     tags: allTags
     sku: searchSku
+    semanticSearch: semanticSearch
   }
 }
 
@@ -151,8 +182,25 @@ module functionApp 'modules/functionapp.bicep' = {
       COSMOS_ENDPOINT: cosmos.outputs.endpoint
       COSMOS_DATABASE: cosmos.outputs.databaseName
       COSMOS_CONTAINER: cosmos.outputs.containerName
+      COSMOS_AUDIT_CONTAINER: cosmos.outputs.auditContainerName
+      MINICODE_REPOSITORY: 'cosmos'
       SEARCH_ENDPOINT: search.outputs.endpoint
+      SEARCH_BACKEND: 'azure'
+      SEARCH_INDEX_PREFIX: searchIndexPrefix
+      SEMANTIC_RANKER: string(semanticSearch != 'disabled' && searchSku != 'free')
       AI_SERVICES_ENDPOINT: ai.outputs.endpoint
+      ENRICHMENT_ENABLED: 'true'
+      LLM_PROVIDER: llmProvider
+      AZURE_OPENAI_CHAT_DEPLOYMENT: chatDeployment
+      AZURE_OPENAI_EMBEDDING_DEPLOYMENT: embeddingDeployment
+      EMBEDDINGS_PROVIDER: 'azure-openai'
+      EMBEDDING_DIMENSIONS: string(embeddingDimensions)
+      CLAUDE_FOUNDRY_ENDPOINT: empty(claudeFoundryEndpoint) ? ai.outputs.endpoint : claudeFoundryEndpoint
+      CLAUDE_DEPLOYMENT: claudeDeployment
+      SUMMARY_LANGUAGE: summaryLanguage
+      AUTH_MODE: 'entra' // never 'dev' in Azure; the code also refuses dev mode in prod
+      AUTH_TENANT_ID: subscription().tenantId
+      API_CLIENT_ID: apiClientId
     }
   }
 }
@@ -190,3 +238,7 @@ output storageAccountName string = storage.outputs.name
 output cosmosEndpoint string = cosmos.outputs.endpoint
 output searchEndpoint string = search.outputs.endpoint
 output aiServicesEndpoint string = ai.outputs.endpoint
+output searchIndexes array = [
+  '${searchIndexPrefix}-recordings'
+  '${searchIndexPrefix}-chunks'
+]

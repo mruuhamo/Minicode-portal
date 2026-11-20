@@ -7,7 +7,7 @@ Status: **code complete against mocks**. The real Microsoft Graph and Azure AI S
 ```mermaid
 flowchart LR
     T[Timer ingest_timer<br/>hourly] --> P
-    H[POST /api/admin/ingest<br/>mode=backfill/incremental] --> P
+    H[POST /api/manage/ingest<br/>mode=backfill/incremental] --> P
     C[CLI<br/>python -m minicode.ingestion] --> P
     P[IngestionPipeline] -->|delta / children| G[GraphRecordingSource<br/>Sites.Selected]
     G --> SP[(SharePoint channel site<br/>General/Recordings)]
@@ -92,7 +92,7 @@ Functions host (needs Azure Functions Core Tools + Azurite for the timer trigger
 cd backend
 copy local.settings.sample.json local.settings.json
 func start
-curl -X POST "http://localhost:7071/api/admin/ingest?mode=backfill"
+curl -X POST "http://localhost:7071/api/manage/ingest?mode=backfill"
 ```
 
 ## Settings
@@ -127,7 +127,7 @@ All of these are set by `infra/main.bicep`.
    - Check the channel folder name; recordings are usually under `<Channel name>/Recordings`. Set `minicodeFolderPath`.
 3. **Speech**: Bicep already grants the Function MI *Cognitive Services Speech User* on the AI Services account. Speech must read the audio, so `MINICODE_STORAGE=azure` is required: the pipeline hands Speech a short-lived user-delegation SAS. Local storage only produces `file://` URLs.
 4. **ffmpeg**: `imageio-ffmpeg` ships a static ffmpeg binary in the deployment package (≈30 MB). On the Function host, `find_ffmpeg()` uses `PATH` first, then that binary.
-5. Set `MINICODE_SOURCE=graph` (Bicep does this when `minicodeSiteId` is non-empty) and run `POST /api/admin/ingest?mode=backfill` once. The hourly timer then keeps the content in sync.
+5. Set `MINICODE_SOURCE=graph` (Bicep does this when `minicodeSiteId` is non-empty) and run `POST /api/manage/ingest?mode=backfill` once. The hourly timer then keeps the content in sync.
 
 ## Tests
 
@@ -139,7 +139,7 @@ All of these are set by `infra/main.bicep`.
 | `test_speech.py` | batch request shape, submit/poll/result/delete, failed jobs, real ffmpeg extraction (skipped without ffmpeg) |
 | `test_storage.py` | local blob store, SAS/URL behaviour |
 | `test_pipeline.py` | end-to-end backfill, idempotent rerun, force, async Speech completion, failures + attempt cap, timeouts, window, incremental, expired cursor, crash/resume |
-| `test_function_app.py` | `/api/admin/ingest` handler against mocks |
+| `test_function_app.py` | `/api/manage/ingest` handler against mocks |
 
 ## Open questions / to verify with real access
 
